@@ -1,0 +1,95 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="alert mb-2" style="background-color: #404E67;">
+            <div class="row breadcrumbs-top">
+                <div class="breadcrumb-wrapper col-12">
+                   
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-white"> Admin Balance
+                        </li>
+                        <li class="breadcrumb-item ml-auto text-white">
+
+                            
+
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+        
+
+            <section>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="media align-items-stretch">
+                                    <div class="p-2 text-center bg-danger bg-darken-2">
+                                        <i class="icon-graph font-large-2 white"></i>
+                                    </div>
+                                    <div class="p-2 bg-gradient-x-danger white media-body">
+                                        <h5>Total Balance </h5>
+                                        <h5 class="text-bold-400 mb-0">{{ total_admin_balance.amount__sum }} </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="media align-items-stretch">
+                                    <div class="p-2 text-center bg-primary bg-darken-2">
+                                        <i class="icon-rocket font-large-2 white"></i>
+                                    </div>
+                                    <div class="p-2 bg-gradient-x-primary white media-body">
+                                        <h5>Total Agent Added Amount </h5>
+                                        <h5 class="text-bold-400 mb-0">{{total_agent_add_amount.amount__sum}} €</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="media align-items-stretch">
+                                    <div class="p-2 text-center bg-info bg-darken-2">
+                                        <i class="icon-support font-large-2 white"></i>
+                                    </div>
+                                    <div class="p-2 bg-gradient-x-info white media-body">
+                                        <h5>Total Agent Amount </h5>
+                                        <h5 class="text-bold-400 mb-0">{{total_agent_amount.amount__sum}} €</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+           
+            
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block custom_script %}
+
+
+
+{% endblock custom_script %}

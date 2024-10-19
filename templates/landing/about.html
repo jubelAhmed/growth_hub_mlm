@@ -1,0 +1,59 @@
+{% extends 'landing/landing_base.html' %}
+{% load static %}
+
+{% block home_url %} {% url 'landing_home' %}#home {% endblock %}
+{% block about_url %} {% url 'landing_home' %}#about_us {% endblock %}
+{% block mission_url %} {% url 'landing_home' %}#marketingplan {% endblock %}
+{% block faq_url %} {% url 'landing_home' %}#faq {% endblock %}
+{% block package_url %} {% url 'landing_home' %}#pakages {% endblock %}
+{% block contact_url %}  {% url 'landing_home' %}#contact {% endblock %}
+
+{% block content %}
+
+<div class="section padding-top-bottom-big background-white">
+	<div class="container" id="about_us">
+		<!-- <div class=" img-wrap">
+                    <div class="d-flex ">
+                        <img style="height: 400px;" src="img/1.svg" alt="">
+                    </div>
+                </div> -->
+
+		<nav aria-label="breadcrumb">
+			<ol style="background: #13E0A7;" class="breadcrumb">
+				<li class="breadcrumb-item active text-white" aria-current="page">About Us </li>
+			</ol>
+		</nav>
+
+		<div class="align-self-center">
+			<!-- <h3 class="text-center pt-5 pb-3">About Us </h3> -->
+
+			{% for txt in all_about %}
+			<div>
+				{{ txt.about_text |safe}}
+			</div>
+			{% endfor %}
+
+
+		</div>
+
+
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 my-5"></div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

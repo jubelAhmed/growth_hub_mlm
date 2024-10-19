@@ -1,0 +1,67 @@
+{% extends 'landing/landing_base.html' %} 
+{% load static %} 
+
+
+{% block home_url %} {% url 'landing_home' %}#home {% endblock %}
+{% block about_url %} {% url 'landing_home' %}#about_us {% endblock %}
+{% block mission_url %} {% url 'landing_home' %}#marketingplan {% endblock %}
+{% block faq_url %} {% url 'landing_home' %}#faq {% endblock %}
+{% block package_url %} {% url 'landing_home' %}#pakages {% endblock %}
+{% block contact_url %}  {% url 'landing_home' %}#contact {% endblock %}
+
+
+{% block content %}
+
+
+    <div class="section padding-top-bottom-big background-white">
+        <div class="container">
+
+            <nav aria-label="breadcrumb">
+                <ol style="background: #13E0A7;" class="breadcrumb">
+                    <li class="breadcrumb-item active text-white" aria-current="page"> Terms & Condition </li>
+                </ol>
+            </nav>
+            {{terms_condition.}}
+		  {% for text in  terms_condition %}
+				<div>
+					{{text.condition_text|safe }}
+				</div>
+		{% endfor %}
+            <p>
+                <!-- Hello dear,
+                Welcome to Exnessuae Family. You may be wondering what is Exnessuae?
+                Why do you start Exnessuae? If such a question arises in your mind, then
+                we have some questions for you. Now it will be easy for you to match our
+                question with yours.
+                First of all, have you had any bad experiences in the past few days working
+                on an MLM or investment plan or on an investment side online? If this is the
+                case then maybe Exnessuae is the right place for you, where there is no
+                chance of any new experience or loss in the future. We have all had more or
+                less the experience of many types of plans including MLM or Pyramid
+                Scheme, Binary, Uni-level or Matrix and this experience is so much that now
+                many of us are tired and even annoyed.
+                Seeing all this, we realized at some point that most people can't survive in
+                this plan as a platform to fulfill their dreams. Although a small number of
+                people can reach the goal due to long-term hard work and final decision.
+                And the reason most people fail to get to the final stage is because of
+                marketing plans and tough conditions. For example, monthly maintenance
+                costs or making it compulsory to buy products every month and adding new
+                people and then becomes a big challenge and these are the main reasons
+                for failure. Also, many companies cannot continue after promising to pay
+                multiple dividends against the investment because their money investment
+                is not used properly or in the right place. As a result, many online platforms
+                are forced to shut down their sites at some point. For these reasons,
+                countless people around the world are losing confidence in MLM or
+                investment platforms day by day. -->
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock %}

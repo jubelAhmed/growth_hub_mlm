@@ -1,0 +1,188 @@
+{% extends 'users/base.html' %} {% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-7 col-md-8 col-10 p-0">
+                        <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card-header border-0 py-1 bg-success">
+                                <div class="card-title text-center">
+                                    <!-- <img src="{% static 'app-assets/images/logo/stack-logo.png' %}" alt="branding logo">  -->
+                                    <div class="badge badge-success"> New User Registration</div>
+
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body pt-3">
+                                    {% if error %}
+                                    <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <strong>Oh snap!</strong> {{ error }}
+                                    </div>
+                                    {% endif %} {% if accountCreated %}
+                                    <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                        <h2 class="text-secondary"><strong>Success!</strong> Account Created.</h2>
+                                        <hr>
+                                        <p class="text-secondary">
+                                            <b>Username</b>: {{ user_name}} <br>
+                                            <b>Password</b>: {{ pass }} <br>
+                                            <b>Package</b>: {{ package }} <br>
+                                            <b>Sponsor</b>: {{ sponsor }} <br>
+                                            <b>Agent</b>: {{ agent }} <br>
+
+                                        </p>
+                                    </div>
+                                    {% endif %}
+
+                                    <form class="form-horizontal" action="{% url 'registration' %}" method="POST">
+
+                                        {% csrf_token %}
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <!-- User Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-name">User Name <i class="fa fa-star text-danger"></i></label>
+                                                        <input type="text" class="form-control" value="{% if form_field %} {{form_field.username}} {% endif %}" id="user-name" name="username" placeholder="User Name" required>
+                                                    </fieldset>
+                                                    <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Full Name</label>
+                                                        <input type="text" class="form-control" id="user-type" value="{% if form_field %} {{form_field.full_name}} {% endif %}" name="full_name" placeholder="Full Name">
+                                                    </fieldset>
+                                                    <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-member-pakage">Member Package <i class="fa fa-star text-danger"></i></label>
+
+                                                        <select class="custom-select" id="package" name="package_name" required>
+                                                           {% for p in packages %}
+    
+                                                                <option value="{{p.id}}">{{p.package_name}} - {{p.package_amount}} €</option>
+                                                            
+                                                                {% endfor %}
+                                                        </select>
+
+                                                    </fieldset>
+                                                    <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Sponsor ID </label>
+                                                        <input type="text" class="form-control" id="user-type" name="sponsor_id" value="{% if form_field %} {{form_field.sponsor_id}} {% endif %}" placeholder="sponsor ID">
+                                                    </fieldset>
+
+
+                                                    <!-- User Email  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-email">Email <i class="fa fa-star text-danger"></i></label>
+                                                        <input type="email" class="form-control" id="user-email" name="email" placeholder="Your Email Address" value="{% if form_field %} {{form_field.email}} {% endif %}" required>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <!-- User Phone Number  -->
+                                                    {% comment %}
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-phone-number">Phone Number</label>
+                                                        <input type="number" class="form-control" id="user-number" placeholder="User Phone Number ">
+                                                    </fieldset> {% endcomment %}
+
+                                                    <!-- Country  -->
+                                                    <fieldset class="form-group">
+                                                        <label for="customSelect">Country </label> {% include 'countrylistoptions.html' %}
+                                                    </fieldset>
+                                                    <!-- Address  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-address-address">Address </label>
+                                                        <input type="text" class="form-control" id="user-address" name="address" value="{% if form_field %} {{form_field.address}} {% endif %}" placeholder="Address">
+                                                    </fieldset>
+
+                                                    <!-- Phone  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-Phone">Phone</label>
+                                                        <input type="text" class="form-control" id="phone" name="mobile_no" value="{% if form_field %} {{form_field.mobile_no}} {% endif %}" placeholder="Phone Number">
+                                                    </fieldset>
+                                                    <!-- Password -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-password">Enter Password <i class="fa fa-star text-danger"></i></label>
+                                                        <input type="text" class="form-control" id="user-password" name="password" placeholder="Enter Password" required>
+                                                        <button type="button" onclick="generatePassword()" class="btn btn-sm btn-primary"><i class="fa fa-lock pr-1"></i>Generate Password</button>
+                                                    </fieldset>
+
+                                                    <!-- Password -->
+                                                    <fieldset class="form-group floating-label-form-group  ">
+                                                        <label for="user-password">ReEnter Password <i class="fa fa-star text-danger"></i></label>
+                                                        <input type="text" class="form-control" id="cuser-password" name="password2" placeholder="Enter Password" required>
+                                                    </fieldset>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning alert-dismissible mb-2" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                            <strong>Password Policy</strong> <br> 1. Password must at least 8 digit length <br> 2. Password must contain one Character <br> 3. Password must contain one number <br>
+
+                                        </div>
+
+                                        <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                class="feather icon-user"></i> Register</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        function getRandomUpperCase() {
+            return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+        }
+
+        function getRandomLowerCase() {
+            return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+        }
+
+        function getRandomNumber() {
+            return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+        }
+
+        function getRandomSymbol() {
+            var symbol = "$@#%";
+            return symbol[Math.floor(Math.random() * symbol.length)];
+        }
+
+        function generatePassword() {
+            var password = getRandomLowerCase();
+            password += getRandomSymbol();
+            password += getRandomLowerCase();
+            password += getRandomNumber();
+            password += getRandomUpperCase();
+            password += getRandomNumber();
+            password += getRandomSymbol();
+            password += getRandomLowerCase();
+            password += getRandomNumber();
+            password += getRandomUpperCase();
+
+            document.getElementById('user-password').value = password;
+            document.getElementById('cuser-password').value = password;
+        }
+    </script>
+</div>
+<!-- END: Content-->
+
+
+{% endblock %}

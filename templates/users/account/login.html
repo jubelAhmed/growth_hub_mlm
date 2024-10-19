@@ -1,0 +1,74 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+
+<body class="vertical-layout vertical-overlay-menu 1-column  bg-cyan bg-lighten-2 blank-page blank-page"
+    data-open="click" data-menu="vertical-overlay-menu" data-col="1-column">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 m-0">
+                                <div class="card-header border-0">
+                                    <div class="card-title text-center">
+                                        <!-- Please set-up Logo link here -->
+                                        <div class="p-1">
+                                             <!-- <img src="{% static 'app-assets/images/logo/stack-logo-dark.png' %}"
+                                                alt="branding logo"> -->
+                                            <h4 class="text-info">iTrader UK</h4>
+                                           
+                                        </div>
+                                    </div>
+                                    <div>
+                                      {% include 'users/alerts.html' %}
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body pt-0">
+                                        <form class="form-horizontal" action="" method="POST">
+                                        {% csrf_token %}
+                                            <fieldset class="form-group floating-label-form-group">
+                                                <label for="user-name">Your Username</label>
+                                                <input type="text" class="form-control" id="user-name"
+                                                   name="username" placeholder="Your Username">
+
+                                            </fieldset>
+                                            <fieldset class="form-group floating-label-form-group mb-1">
+                                                <label for="user-password">Enter Password</label>
+                                                <input type="password" class="form-control" id="user-password"
+                                                   name="password"  placeholder="Enter Password">
+                                                  
+                                            </fieldset>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-12 text-center text-sm-left">
+                                                    <fieldset>
+                                                        <input type="checkbox" id="remember-me" class="chk-remember">
+                                                        <label for="remember-me"> Remember Me</label>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a
+                                                        href="{% url 'password_reset' %}" class="card-link">Forgot
+                                                        Password?</a></div>
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                    class="feather icon-unlock"></i> Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

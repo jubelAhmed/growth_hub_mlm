@@ -1,0 +1,728 @@
+{% extends 'admin/admin_base.html' %} {% load static %} {% block custome_style %}
+
+<style>
+    .nav.nav-tabs.new-user-list .nav-item a {
+        color: #00b5b8;
+    }
+    
+    .nav.nav-tabs.new-user-list .nav-item a.nav-link.active {
+        border-top: 3px solid #00b5b8;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #555;
+    }
+    
+    .nav.nav-tabs.winner-user-list .nav-item a {
+        color: #16d39a;
+    }
+    
+    .nav.nav-tabs.winner-user-list .nav-item a.nav-link.active {
+        border-top: 3px solid #16d39a;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #555;
+    }
+    
+    .nav.nav-tabs.hold-user-list .nav-item a {
+        color: #ff7588;
+    }
+    
+    .nav.nav-tabs.hold-user-list .nav-item a.nav-link.active {
+        border-top: 3px solid #ff7588;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #555;
+    }
+</style>
+
+
+{% endblock custome_style %} {% block content %}
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row ">
+            <div class="col-12">
+                <div class="alert mb-2" style="background-color: #404E67;">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item text-white"> Dashboard
+                                </li>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-body">
+        
+        <section id="chartjs-bar-charts">
+            <!-- Column Chart -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Member Registration Per Month </h4>
+                            <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                    <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="height-400">
+                                    <canvas id="column-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+            <!-- Winner Card Design start -->
+            <div class="row justify-content-center">
+
+                {% if winner_list %} {% for winner in winner_list %}
+
+                <div class="col-md-4">
+                    <div class="card rounded-lg " style="height: 300px;">
+                        <div class="card rounded">
+                            <div class="card-content text-center">
+                                <div class="avatar avatar-xl">
+                                    {% if winner.photo %}
+
+                                       <img src="{{ winner.photo.url }}" class="rounded-circle img-border " style="border-right:3px dotted rgb(250, 152, 25)" alt="Winner image">
+                                     {% else %}
+                                     <img src="{% static 'app-assets/images/avatar.jpg' %}" class="rounded-circle img-border" style="border-right:3px dotted rgb(250, 152, 25)" alt="Profile image">
+                                     {% endif %}
+                                      
+                                   </div>
+                                <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}" alt="Lights" width="130" height="50%">
+                                <div class="card-body">
+                                    <h4 style="line-height: 0.3; color: rgb(250, 152, 25);" class="card-title">
+                                        Congrats!!</h4>
+                                    <h4 class="" style="  line-height: 0.3;"> Today
+                                        <span class="text-bold-700"> {{winner.package_id.package_name|title}} </span> Winner </h6>
+                                        <h5 class="card-text text-success pt-1 text-bold-700">
+                                            <i class="fa fa-trophy "></i> {{winner.full_name|title}}
+                                            <i class="fa fa-trophy "></i>
+
+                                        </h5>
+                                        <h5 class="card-text text-success pt-1 text-bold-300"> 
+                                            {{winner.mobile_no|title}}
+                                       </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {% endfor %} {% else %}
+
+                <div class="col-sm-5">
+                    <div class="card rounded-lg " style="height: 80px;">
+                        <div class="card rounded">
+                            <div class="card-content text-center">
+                                <!-- <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}"
+                                            alt="Lights" width="20%" height="20%"> -->
+                                <div class="card-body">
+
+                                    <h4 class="text-warning " style="line-height: 0.3;"> <i class="fa fa-trophy"></i> Winner Display Will Be Soon <i class="fa fa-trophy"></i> </h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+
+
+
+
+            </div>
+
+            <!-- Winner Card Design ends -->
+
+            <div class="row">
+                <div class="col-sm-12 col-xl-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-primary">New Member List</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <ul class="nav nav-tabs nav-only-icon nav-top-border no-hover-bg new-user-list" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="new_member_list_l-tab1" data-toggle="tab" href="#new_member_list_l" aria-controls="new_member_list_l" role="tab" aria-selected="true"><i class="fa fa-align-justify"></i>Primary </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="new_member_list_r-tab" data-toggle="tab" href="#new_member_list_r" aria-controls="new_member_list_r" role="tab" aria-selected="false"><i class="fa fa-send-o"></i>Premium </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content  pt-1">
+                                    <div class="tab-pane active in" id="new_member_list_l" aria-labelledby="new_member_list_l-tab1" role="tabpanel">
+                                        {% if primary_new_user_list %} {% for primary_new_user in primary_new_user_list %}
+                                        <div class="shadow">
+                                            <div class="card rounded">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-3 col-sm-3">
+                                                                <div class="">
+                                                                    <div class="avatar a bg-primary">
+                                                                        <span>{{ primary_new_user.full_name|make_list|first|title }}</span>
+                                                                        <span class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9">
+                                                                <div class="media d-flex text-right">
+                                                                    <div class="media-body">
+                                                                        <h5 class=" text-primary">{{ primary_new_user.full_name|title }}</h5>
+                                                                        <h6 class=" text-primary">
+                                                                            Sponsor
+                                                                            <div class="badge badge-glow badge-pill badge-primary">
+                                                                                {{primary_new_user.sponsor_count}}</div>
+
+                                                                        </h6>
+
+
+
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-3 col-sm-3 ">
+                                                                <div class=" badge badge-primary round-lg">Primary <i class="fa fa-star"></i></div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9 text-right">
+                                                                <div class="btn-group " role="group" aria-label="Second Group">
+                                                                    <button type="button" class="btn btn-sm btn-icon btn-danger"><i
+                                                                            class="fa fa-edit"></i></button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-info">
+                                            <h6>New Primary Member is not available now. </h6>
+                                        </div>
+                                        {% endif %}
+
+
+
+                                    </div>
+
+                                    <!-- Premium New User -->
+                                    <div class="tab-pane " id="new_member_list_r" aria-labelledby="new_member_list_r-tab1" role="tabpanel">
+                                        {% if premium_new_user_list %} {% for premium_new_user in premium_new_user_list %}
+
+                                        <div class="shadow">
+                                            <div class="card rounded">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-3 col-sm-3">
+                                                                <div class="">
+                                                                    <div class="avatar a bg-primary">
+                                                                        <span>{{ premium_new_user.full_name|make_list|first|title }}</span>
+
+                                                                        <span class="badge badge-pill badge-sm badge-danger
+                                                                            badge-up 
+                                                                           
+                                                                            rounded-circle">{{forloop.counter}}</span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9">
+                                                                <div class="media d-flex text-right">
+                                                                    <div class="media-body">
+                                                                        <h5 class=" text-primary">{{ premium_new_user.full_name|title }}</h5>
+                                                                        <h6 class=" text-primary"> Sponsor
+                                                                            <div class="badge badge-glow badge-pill badge-primary">
+                                                                                {{premium_new_user.sponsor_count}}</div>
+                                                                        </h6>
+
+
+
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-3 col-sm-3 ">
+                                                                <div class=" badge badge-primary 
+                                                                    round-lg">Premium <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9 text-right">
+                                                                <div class="btn-group " role="group" aria-label="Second Group">
+                                                                    <button type="button" class="btn btn-sm btn-icon btn-danger"><i
+                                                                            class="fa fa-edit"></i></button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-info">
+                                            <h6>New Premium Member is not available now. </h6>
+                                        </div>
+                                        {% endif %}
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-success">Top 100 Members</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <ul class="nav nav-tabs nav-only-icon nav-top-border no-hover-bg package-user-list " role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active " id="primary_100_list-tab1" data-toggle="tab" href="#primary_100_list" aria-controls="primary_100_list" role="tab" aria-selected="true"><i class="fa fa-align-justify"></i>Primary </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="premium_100_list-tab1" data-toggle="tab" href="#premium_100_list" aria-controls="premium_100_list" role="tab" aria-selected="false"><i class="fa fa-send-o"></i>Premium </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content  pt-1">
+                                    <div class="tab-pane active in" id="primary_100_list" aria-labelledby="primary_100_list-tab1" role="primary_100_list">
+
+                                        {% if primary_100_user_list %} {% for primary_top_user in primary_100_user_list %}
+
+                                        <div class="shadow ">
+                                            <div class="card rounded bg-secondary">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-3 col-sm-3">
+                                                                <div class="">
+                                                                    <div class="avatar a bg-success">
+                                                                        <span>{{ primary_top_user.full_name|make_list|first|title }}</span>
+                                                                        <span class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9">
+                                                                <div class="media d-flex text-right">
+                                                                    <div class="media-body">
+                                                                        <h5 class=" text-success">{{ primary_top_user.full_name|title }}</h5>
+                                                                        <h6 class=" text-success">
+                                                                            Sponsor
+                                                                            <div class="badge badge-glow badge-pill badge-success">
+                                                                                {{primary_top_user.sponsor_count}}</div>
+
+                                                                        </h6>
+
+
+
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-3 col-sm-3 ">
+                                                                <div class=" badge badge-success round-lg">Primary <i class="fa fa-star"></i></div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9 text-right">
+                                                                <h6 class=" text-success">
+                                                                    Earned
+                                                                    <div class="badge badge-glow badge-pill badge-success">
+                                                                        {{primary_top_user.current_wallet}} €</div>
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-success">
+                                            <h6>Top Primary Member is not availabel now </h6>
+                                        </div>
+                                        {% endif %}
+
+
+
+                                    </div>
+                                    <div class="tab-pane" id="premium_100_list" aria-labelledby="premium_100_list-tab1" role="premium_100_list">
+
+                                        {% if premium_100_user_list %} {% for premium_top_user in premium_100_user_list %}
+
+                                        <div class="shadow ">
+                                            <div class="card rounded bg-secondary">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-3 col-sm-3">
+                                                                <div class="">
+                                                                    <div class="avatar a bg-success">
+                                                                        <span>{{ premium_top_user.full_name|make_list|first|title }}</span>
+                                                                        <span class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9">
+                                                                <div class="media d-flex text-right">
+                                                                    <div class="media-body">
+                                                                        <h5 class=" text-success">{{ premium_top_user.full_name|title }}</h5>
+                                                                        <h6 class=" text-success">
+                                                                            Sponsor
+                                                                            <div class="badge badge-glow badge-pill badge-success">
+                                                                                {{premium_top_user.sponsor_count}}</div>
+
+                                                                        </h6>
+
+
+
+
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-between">
+                                                            <div class="col-3 col-sm-3 ">
+                                                                <div class=" badge badge-success round-lg">Premium <i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                                                            </div>
+                                                            <div class="col-9 col-sm-9 text-right">
+                                                                <h6 class=" text-success">
+                                                                    Earned
+                                                                    <div class="badge badge-glow badge-pill badge-success">
+                                                                        {{premium_top_user.current_wallet}} €</div>
+
+                                                                </h6>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-success">
+                                            <h6>Top Premium Member is not availabel now </h6>
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hold Line List -->
+
+                <div class="col-sm-12 col-xl-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-danger"> Hold Line List</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <ul class="nav nav-tabs nav-only-icon nav-top-border no-hover-bg hold-user-list" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="primary_hold_l-tab1" data-toggle="tab" href="#primary_hold_l" aria-controls="primary_hold_l" role="tab" aria-selected="true"><i class="fa fa-align-justify"></i>Primary </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="premium_hold_r-tab" data-toggle="tab" href="#premium_hold_r" aria-controls="premium_hold_r" role="tab" aria-selected="false"><i class="fa fa-send-o"></i>Premium </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content  pt-1">
+                                    <div class="tab-pane active in" id="primary_hold_l" aria-labelledby="primary_hold_l-tab1" role="tabpanel">
+                                        {% if primary_hold_user_list %} {% for primary_hold_user in primary_hold_user_list %}
+
+                                        <div>
+                                            <div class="shadow">
+                                                <div class="card rounded">
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3 col-sm-3">
+                                                                    <div class="">
+                                                                        <div class="avatar a bg-primary">
+                                                                            <span>{{ primary_hold_user.full_name|make_list|first|title }}</span>
+                                                                            <span class="badge badge-pill badge-sm badge-danger
+                                                                            badge-up 
+                                                                           
+                                                                            rounded-circle">{{forloop.counter}}</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-9 col-sm-9">
+                                                                    <div class="media d-flex text-right">
+                                                                        <div class="media-body">
+                                                                            <h5 class=" text-primary">{{ primary_hold_user.full_name|title }}</h5>
+                                                                            <h6 class=" text-primary"> Sponsor
+                                                                                <div class="badge badge-glow badge-pill badge-primary">
+                                                                                    {{primary_hold_user.sponsor_count}}</div>
+                                                                            </h6>
+
+
+
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-3 col-sm-3 ">
+                                                                    <div class=" badge badge-primary 
+                                                                    round-lg">Primary <i class="fa fa-star"></i> </div>
+                                                                </div>
+                                                                <div class="col-9 col-sm-9 text-right">
+                                                                    <div class="btn-group " role="group" aria-label="Second Group">
+                                                                        <button type="button" class="btn btn-sm btn-icon btn-primary"><i
+                                                                                class="fa fa-edit"></i></button>
+
+                                                                        <button type="button" class="btn btn-sm  btn-icon btn-danger " data-toggle="modal" data-target="#hold-primary"><i
+                                                                                class="fa fa-arrow-circle-up"></i></button>
+                                                                    </div>
+                                                                    <form id='primary-hold-submit' action="{% url 'hold_update' primary_hold_user.id %}" method="POST">
+                                                                        {% csrf_token %}
+                                                                        <div class="modal fade text-left" id="hold-primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel19" style="display: none;" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-sm" role="document">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+
+                                                                                        <h4 class="modal-title" id="myModalLabel19">Confirm to put top 100 line </h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span
+                                                                                            aria-hidden="true">×</span>
+                                                                                    </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <h5 class=" text-primary">User Name : {{ primary_hold_user.full_name|title }}</h5>
+                                                                                        <h5>Do You want to push <span class="text-danger">{{ primary_hold_user.full_name|title }}</span> in Top 100 Line</h5>
+
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">No</button>
+                                                                                        <button type="submit" class="btn btn-outline-primary">Yes</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </form>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-danger">
+                                            <h6>Hold Primary Member is not availabel now </h6>
+                                        </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                    <div class="tab-pane" id="premium_hold_r" aria-labelledby="premium_hold_r-tab1" role="tabpanel">
+                                        {% if premium_hold_user_list %} {% for premium_hold_user in premium_hold_user_list %}
+
+                                        <div>
+                                            <div class="shadow">
+                                                <div class="card rounded">
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3 col-sm-3">
+                                                                    <div class="">
+                                                                        <div class="avatar a bg-primary">
+                                                                            <span>{{ premium_hold_user.full_name|make_list|first|title }}</span>
+                                                                            <span class="badge badge-pill badge-sm badge-danger
+                                                                            badge-up 
+                                                                           
+                                                                            rounded-circle">{{forloop.counter}}</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-9 col-sm-9">
+                                                                    <div class="media d-flex text-right">
+                                                                        <div class="media-body">
+                                                                            <h5 class=" text-primary">{{ premium_hold_user.full_name|title }}</h5>
+                                                                            <h6 class=" text-primary"> Sponsor
+                                                                                <div class="badge badge-glow badge-pill badge-primary">
+                                                                                    {{premium_hold_user.sponsor_count}}
+
+                                                                                </div>
+                                                                            </h6>
+
+
+
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-3 col-sm-3 ">
+                                                                    <div class=" badge badge-primary 
+                                                                    round-lg">Premium <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+                                                                </div>
+                                                                <div class="col-9 col-sm-9 text-right">
+                                                                    <div class="btn-group " role="group" aria-label="Second Group">
+                                                                        <button type="button" class="btn btn-sm btn-icon btn-primary"><i
+                                                                                class="fa fa-edit"></i></button>
+
+                                                                        <button type="button" class="btn btn-sm  btn-icon btn-danger" data-toggle="modal" data-target="#small{{premium_hold_user.id}}"><i
+                                                                                class="fa fa-arrow-circle-up"></i></button>
+                                                                    </div>
+
+                                                                    <!-- POP Confirmation -->
+                                                                    <form id='hold-submit' action="{% url 'hold_update' premium_hold_user.id %}" method="POST">
+                                                                        {% csrf_token %}
+
+                                                                        <div class="modal fade text-left" id="small{{premium_hold_user.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel19" style="display: none;" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-sm" role="document">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+
+                                                                                        <h4 class="modal-title" id="myModalLabel19 text-danger">Confirm Top 100 </h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span
+                                                                                            aria-hidden="true">×</span>
+                                                                                    </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+
+                                                                                        <h5 class=" text-primary">User Name : {{ premium_hold_user.full_name|title }}</h5>
+                                                                                        <h5>Do You want to push <span class="text-danger">{{ premium_hold_user.full_name|title }}</span> in Top 100 Line</h5>
+
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">No</button>
+                                                                                        <button type="submit" class="btn btn-outline-primary">Yes</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </form>
+
+
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        {% endfor %} {% else %}
+                                        <div class="text-center text-danger">
+                                            <h6>Hold Premium Member is not availabel now </h6>
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Hold Line List -->
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+{% endblock content %}

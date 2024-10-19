@@ -1,0 +1,112 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header ">
+            <div class="alert mb-2" style="background-color: #404E67;">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12 ">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item text-white pt-auto"> 
+                                View Winner
+                            </li>
+                           
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+
+            <!-- Add Notification start  -->
+            <section id='notification-form' >
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-card-center"> View Winner</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form id='person-delete' class="form" action="" method="POST">
+                                          {% csrf_token %}
+                                        <div class="form-body">
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput2">Name</label>
+                                                        <input type="text" id="eventRegInput2" class="form-control"
+                                                          value="{{winner.user.username}}"   name="title" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput3">Full Name</label>
+                                                        <input type="textarea" id="eventRegInput3" class="form-control"
+                                                           value="{{winner.full_name}}"  name="body" disabled>
+                                                    </div>
+        
+                                                </div>
+                                                <div class="col-6">
+                                                          <div class="form-group">
+                                                        <label for="eventRegInput2">Email</label>
+                                                        <input type="text" id="eventRegInput2" class="form-control"
+                                                          value="{{winner.user.email}}"   name="title" disabled>
+                                                    </div>
+                                                               <div class="form-group">
+                                                        <label for="eventRegInput2">Address</label>
+                                                        <input type="text" id="eventRegInput2" class="form-control"
+                                                          value="{{winner.address}}"   name="title" disabled>
+                                                    </div>
+                                             <div class="form-group">
+                                                        <label for="eventRegInput2">Phone</label>
+                                                        <input type="text" id="eventRegInput2" class="form-control"
+                                                          value="{{winner.mobile_no}}"   name="title" disabled>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions center">
+                                            <a href="{% url 'winner_List' %}"  class="btn btn-warning mr-1">
+                                                <i class="feather icon-x"></i> Cancel
+                                            </a>
+                                            <button type="submit" class="btn btn-primary" onClick="deleteFunction()">
+                                                <i class="fa fa-check-square-o"></i>Delete
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block custom_script %}
+<script>
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+        //$("#notification-form").css('display','none');
+        
+    })
+function deleteFunction(e) {
+ 
+          $('#person-delete').submit();          
+        }    
+    
+</script>
+{% endblock custom_script %}

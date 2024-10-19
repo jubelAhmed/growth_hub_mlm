@@ -1,0 +1,296 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<!-- Code Written By Wridoy -->
+<!-- Code Written By Wridoy -->
+<style>
+    @media (min-width: 576px) {
+        .heading77 {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .heading77 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .heading77 {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .heading77 {
+            font-size: 2rem;
+        }
+    }
+
+    /* 
+    * {
+        margin: 0;
+        padding: 0;
+    } */
+
+    /* body{ font-size: 20px;}  */
+    .banner {
+        position: relative;
+        width: 100%;
+        margin: 0
+    }
+
+    .heading77 {
+        color: White;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+</style>
+
+<div class="app-content content">
+
+
+    <div class="content-wrapper ">
+        <div class="container">
+            {% if error %}
+                <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    <strong>Oh snap!</strong> {{ error }}.
+                </div>
+            {% endif %}
+            {% include 'users/alerts.html' %}
+            {% if success %}
+            <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                <strong>Oh snap!</strong> {{ success }}.
+            </div>
+            {% endif %}
+            <div class="px-2 mb-2 bg-success bg-darken-4">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item text-white mr-auto pt-1"> 
+                                <p class="text-bold-600 text-capitalize font-medium-2"> Withdrawable Balance : <strong
+                                    class=""> {{ balance.amount }} € </strong> </p> 
+                            </li>
+                            <li class="breadcrumb-item ml-auto text-white py-1">
+
+                                <button type="button" class="btn btn-outline-white text-bold-600 text-capitalize font-medium-2" data-toggle="modal"
+                                    data-target="#inlineForm">
+                                    Balance Withdrawal <i class="fa fa-plus"></i>
+                                </button>
+
+
+
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel33" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <label class="modal-title text-text-bold-600" id="myModalLabel33">BALANCE
+                                WITHDRAWAL</label>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <form action="{% url 'balance_withdrow' %}" method="POST">
+                            {% csrf_token %}
+                            <div style="display: none;" id="confirmation">
+                                <p class="mt-2 ml-2 mr-2 warning" style="font-size: 18px; font-weight: bold;">Are you sure to Withdraw money from your account?</p>
+                                <table class="table ml-2 mr-2" style="max-width: 90%;">
+                                    <tr>
+                                        <td>Withdrawal Amount</td>
+                                        <td id="wusd">0 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BTC Address</td>
+                                        <td id="wbtc">none</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>PIN Code:</td>
+                                        <td><b id="cpin">0</b></td>
+                                    </tr>
+                                </table>
+                                <center>
+                                    <input type="submit" class="btn btn-outline-warning mb-3" value="Confirm Withdraw Money">
+                                </center>
+
+                            </div>
+                            <div id="form-body">
+                            <div class="modal-body" >
+                                <label>Withdrawal Ammount</label>
+                                <div class="form-group">
+                                    <input type="text" id="wamount" name="wamount" placeholder="Withdrawal Ammount" class="form-control">
+                                </div>
+                                <label>BTC Address </label>
+                                <div class="form-group">
+                                    <input type="text" value="{% if admin_account %}  {{ admin_account.btc_address }} {% endif %}" name="btcaddress" id="btcaddress" placeholder="BTC Address" class="form-control" disabled>
+                                </div>
+                                <label>Transection PIN</label>
+                                <div class="form-group">
+                                    <input type="text" name="wpin" id="wpin" placeholder="Transection PIN " class="form-control">
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <input type="reset" class="btn btn-outline-secondary btn mr-3" data-dismiss="modal"
+                                    value="close">
+                                <button type="button" onclick="confirm()" class="btn btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="content-body">
+
+
+            <div class="container">
+                <section id="multiple-table">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Balance Withdrawal Records</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-content collapse show">
+                                    <div class="card-body card-dashboard">
+
+                                        <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                                            <table
+                                                class="table table-striped table-bordered multiple-control-elements dataTable"
+                                                id="DataTables_Table_2" aria-describedby="DataTables_Table_2_info"
+                                                role="grid">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-sort="ascending"
+                                                            aria-label="Name: activate to sort column descending"
+                                                            style="width: 207px;">Agent</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-label="Position: activate to sort column ascending"
+                                                            style="width: 331px;">Payment Method</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-label="Office: activate to sort column ascending"
+                                                            style="width: 152px;">Amount</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-label="Age: activate to sort column ascending"
+                                                            style="width: 70px;">Pin</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-label="Start date: activate to sort column ascending"
+                                                            style="width: 145px;">Status</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="DataTables_Table_2" rowspan="1" colspan="1"
+                                                            aria-label="Start date: activate to sort column ascending"
+                                                            style="width: 145px;">Request Created On</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                   {% for data in history %}
+                                                   <tr role="row" class="odd">
+                                                        <td>{{ data.agent }}</td>
+                                                        <td>{{ data.payment_method }} - <p class="badge badge-secondary">  {{ data.accountIdentifier }} </p> </td>
+                                                        <td>{{ data.amount }}</td>
+                                                        <td>{{ data.pin }}</td>
+                                                        <td>{{ data.status }}</td>
+                                                        <td>{{ data.created_date }}</td>
+                                                    </tr>
+                                                   {% endfor %}
+                                                   
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th rowspan="1" colspan="1">Agent</th>
+                                                        <th rowspan="1" colspan="1">Payment Method</th>
+                                                        <th rowspan="1" colspan="1">Amount</th>
+                                                        <th rowspan="1" colspan="1">Pin</th>
+                                                        <th rowspan="1" colspan="1">Status </th>
+                                                        <th rowspan="1" colspan="1">Request On </th>
+                                                         
+
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block custom_script %}
+<script>
+    $(document).ready(function () {
+        $("#DataTables_Table_2").DataTable();
+    })
+</script>
+<script>
+    // Script for confirm modal
+    function confirm(e) {
+        //  Hide Input form
+        document.getElementById('form-body').style.display = 'none'
+        document.getElementById('confirmation').style.display = ""
+
+        var amount = document.getElementById('wamount').value
+        var agent = document.getElementById('btcaddress').value
+        var pin = document.getElementById('wpin').value
+
+        document.getElementById('wusd').innerHTML = amount
+        document.getElementById('wbtc').innerHTML = agent
+        document.getElementById('cpin').innerHTML = pin
+
+
+
+    }
+</script>
+{% endblock custom_script %}

@@ -1,0 +1,99 @@
+{% load static %}
+
+{% include 'users/navbar.html' %}
+
+{% if user.is_authenticated %}
+
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+    <!-- Horizontal menu content-->
+    <div class="navbar-container main-menu-content container center-layout" data-menu="menu-container">
+        <!-- include ../../../includes/mixins-->
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="feather icon-home"></i><span data-i18n="Dashboard">Dashboards</span>
+                
+                </a>
+            </li>
+
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-users"></i><span data-i18n="Dashboard">Profile</span></a>
+                <ul class="dropdown-menu">
+                    <!-- Update Profile button -->
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'update_profile' %}" data-i18n="eCommerce" data-toggle="dropdown">Profile Update</a>
+                    </li>
+
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'profile' %}" data-i18n="Fitness" data-toggle="dropdown">My Profile</a>
+                    </li>
+                    <!-- 
+                    <li data-menu=""><a class="dropdown-item" href="dashboard-crm.html" data-i18n="CRM" data-toggle="dropdown">CRM</a>
+                    </li> -->
+                </ul>
+            </li>
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-globe"></i><span data-i18n="Dashboard">Network</span></a>
+                <ul class="dropdown-menu">
+
+
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'downline_link' %}" data-i18n="Analytics" data-toggle="dropdown">Downline Network</a>
+                    </li>
+
+                    <!-- 
+                    <li data-menu=""><a class="dropdown-item" href="dashboard-crm.html" data-i18n="CRM" data-toggle="dropdown">CRM</a>
+                    </li> -->
+                </ul>
+            </li>
+            {% if usertype == 'agent' %}
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-printer"></i><span data-i18n="Templates">Reports</span></a>
+                <ul class="dropdown-menu">
+
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'sponsor_reports' %}" data-i18n="Modern Menu" data-toggle="dropdown">Sponsor Reports</a>
+                    </li>
+                   <li data-menu=""><a class="dropdown-item" href="{% url 'user_withdraw_list' %}" data-i18n="Chat Application" data-toggle="dropdown">User Withdraw List</a>
+                    </li>
+                      <!--<li data-menu=""><a class="dropdown-item" href="{% url 'exchange_reports' %}" data-i18n="Todo Application" data-toggle="dropdown">Exchange Reports</a>
+                    </li> -->
+
+
+
+                </ul>
+            </li>
+            {% endif %} 
+            {% if usertype == 'user' %}
+            <li class="dropdown nav-item" data-menu="dropdown">
+                <a class=" nav-link" href="{% url 'stair_reports' %}">
+                    <i class="feather icon-layout"></i><span data-i18n="Layouts">Stairs</span></a>
+            </li>
+            {% endif %}
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-box"></i><span data-i18n="Apps">Transactions</span></a>
+                <ul class="dropdown-menu">
+                    {% if usertype == 'admin' %}
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_add' %}" data-i18n="Email Application" data-toggle="dropdown"> Balance Add</a>
+                    </li>
+                    {% endif %} {% if usertype == 'agent' %}
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'agent_balance_add_history' %}" data-i18n="Email Application" data-toggle="dropdown">Balance Adding History</a>
+                    </li>
+                   
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_transfer' %} " data-i18n="Email Application" data-toggle="dropdown">Balance Transfer</a>
+                    </li>
+
+                    {% endif %}
+                    <li data-menu=""><a class="dropdown-item" href=" {% if usertype == 'agent'  %} {% url 'balance_withdrow' %} {% elif usertype == 'user'  %} {% url 'user_balance_withdrow' %} {% else %} # {% endif %} " data-i18n="Email Application" data-toggle="dropdown">Balance Withdraw</a>
+                    </li>
+                    
+                    
+
+
+
+                </ul>
+            </li>
+            {% if usertype == 'agent' %}
+            <li class=" nav-item" >
+                <a class="nav-link" href="{% url 'registration' %}"><i class="feather icon-home"></i><span data-i18n="Registration">Registration</span>
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+    <!-- /horizontal menu content-->
+</div>
+
+{% endif %}

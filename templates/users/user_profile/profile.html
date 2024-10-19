@@ -1,0 +1,185 @@
+{% extends 'users/base.html' %} {% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <div class="">
+                <div id="user-profile">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-8 bg-white px-0">
+                            <div class="card profile-with-cover ">
+                                <div class="card-img-top img-fluid bg-cover height-100 bg-secondary "></div>
+                                <div class="media profil-cover-details w-100 " style="margin-top:-3px;margin-left:auto !important;margin-right:auto !important">
+                                    <div class="media-left pl-2 pt-2">
+                                        <a href="#" class="profile-image">
+                                          {% if profile.photo != None %}
+
+                                            <img src="{{ profile.photo.url }}" class="rounded-circle img-border height-100" alt="Profile image">
+                                          {%else %}
+                                          <img src="{% static 'app-assets/images/avatar.jpg' %}" class="rounded-circle img-border height-100" alt="Profile image">
+                                          {% endif %}
+                                        </a>
+                                    </div>
+                                    <div class="media-body pt-3 px-2">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h3 class="card-title">{{ profile.full_name|title }}</h3>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center ">
+                        <div class="col-sm-8 bg-white">
+                            <div class="text-center">
+                                <div class="">
+                                    <h3 class=" text-secondary text-bold-600">{{ usertype|title }}</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-group list-group-flush">
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-6 text-left">Full Name </div>
+                                                <div class="col-sm-6 text-success text-right ">{{ profile.full_name|title }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Mobile </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.mobile_no|title }}</div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Country </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.country|title }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Division </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.division|title }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">City </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.district|title }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Address </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.address|title }}</div>
+                                            </div>
+                                        </li>
+
+                                  
+
+                                    </ul>
+
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-group list-group-flush">
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Birth Date </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.birth_date }}</div>
+                                            </div>
+                                        </li>
+
+                                        {% if usertype == 'agent' %}
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Service Area </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.thana }}</div>
+                                            </div>
+                                        </li> 
+
+                                        {% else %}
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Current Status </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.user_current_status|title }}</div>
+                                            </div>
+                                        </li>
+
+                                        {% endif %} {% if usertype == 'user' %}
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Current Wallet </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.current_wallet }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Registration Wallet </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.registration_wallet }}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Sponsor Wallet </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.sponsor_wallet }}</div>
+                                            </div>
+                                        </li>
+
+                                        {% endif %}
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Account Created On</div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.created_date|date:"D d M Y" }}</div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Updated Date </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.updated_date|date:"D d M Y" }}</div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-left">Transaction Number </div>
+                                                <div class="col-sm-8 text-success text-right">{{ profile.tnx_no|title }}</div>
+                                            </div>
+                                        </li>
+
+
+
+
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-7 col-md-8 col-10 p-0">
+                        <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card-header border-0 pb-0">
+                                <div class="card-title text-center">
+                                    <!-- <img src="{% static 'app-assets/images/logo/stack-logo-dark.png' %}"
+                                        alt="branding logo"> -->
+                                    <h4 class="text-primary ">My Profile</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="card-content">
+                                <div class="card-body pt-3">
+
+                                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <!-- User Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-name">User Name </label>
+                                                        <input type="text" class="form-control" id="user-name"
+                                                           value="{{user_admin.username}}" name="username" placeholder="User Name">
+                                                    </fieldset>
+                                                    <!-- User Full Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">First Name</label>
+                                                        <input type="text" class="form-control" id="full-name"
+                                                          name="first_name" value="{{ user_admin.first_name}}" placeholder="Full name" >
+                                                    </fieldset>
+                                          
+                                              
+                                                    <!-- User photo  -->
+                                                     <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">User Photo</label>
+                                                         {% if photo_admin.photo %}
+                                                         <img src="{{ photo_admin.photo.url }}" width="100px" style="border-radius: 50%; border-color: black; border-width: 5px;" />
+                                                         {% else %}
+                                                         <img src="{% static 'app-assets/images/avatar.jpg' %}" width="100px" style="border-radius: 50%; border-color: black; border-width: 5px;" />
+                                                         {% endif %}
+                                                         <input type="file" id="img" name="photo" value="{{ photo_admin.photo }}" accept="image/*">
+                                                         <input type="hidden" name="usertype" value="{{ usertype }}" />
+                                                    </fieldset>                                  
+                                                    <!-- User package  -->
+                                                   
+                                               
+
+                                      
+
+                                             
+                                                   
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                    <!-- User Email  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-email">Your Email Address</label>
+                                                        <input type="email" class="form-control" id="user-email" name="email"
+                                                           value="{{ user_admin.email }}" placeholder="Your Email Address" >
+                                                    </fieldset>
+
+                                        
+                                                     <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Last Name</label>
+                                                        <input type="text" class="form-control" id="full-name"
+                                                          name="last_name" value="{{ user_admin.last_name}}" placeholder="Full name" >
+                                                    </fieldset>     
+
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container-fluid">
+                                            <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                    class="feather icon-user"></i> Profile Update </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <br>
+                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+{% endblock %}

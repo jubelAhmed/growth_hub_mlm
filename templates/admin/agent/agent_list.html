@@ -1,0 +1,349 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="alert mb-2" style="background-color: #404E67;">
+            <div class="row breadcrumbs-top">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-white"> Agent List
+                        </li>
+                        <li class="breadcrumb-item ml-auto text-white">
+
+                            <a class="text-white"
+                                href="{% url 'add_agent' %}"> Add Agent + </a>
+
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section id='agent-form' style="display:none">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-card-center"> NEW AGENT ADD </h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                        <li><a onclick="showAgentForm()"><i class="feather icon-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <div class="card-body">
+                            
+                                        
+                                        {% comment %} <form class="form" action="{% url 'agent_list' %}" method="POST">
+                                         {% csrf_token %}
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput2">User Name <i class="fa fa-star text-danger"></i></label>
+                                                            <input type="text" id="eventRegInput2" class="form-control"
+                                                                placeholder="User Name" value="{% if form_field %} {{form_field.username}} {% endif %}" name="username" required>
+                                                        </div>
+                                            
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Division</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Division" value="{% if form_field %} {{form_field.division}} {% endif %}" name="division">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label for="eventRegInput3">District</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="District" value="{% if form_field %} {{form_field.district}} {% endif %}" name="district">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Thana </label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Thana " value="{% if form_field %} {{form_field.thana}} {% endif %}" name="thana">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label for="eventRegInput3">BTC Address</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="BTCAddress" value="{% if form_field %} {{form_field.BTCAddress}} {% endif %}" name="BTCAddress">
+                                                        </div>                                                                                                                                                                     
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput4">Birthday</label>
+                                                            <input type="date" id="eventRegInput4"
+                                                                class="form-control" placeholder="Date" name="date">
+
+                                                        </div>
+
+                                                 
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Full Name</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                            class="form-control" placeholder="Name" value="{% if form_field %} {{form_field.full_name}} {% endif %}" name="full_name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Email <i class="fa fa-star text-danger"></i></label>
+                                                            <input type="input" id="eventRegInput3"
+                                                                class="form-control" placeholder="Email" value="{% if form_field %} {{form_field.email}} {% endif %}" name="email" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Address</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Address" value="{% if form_field %} {{form_field.address}} {% endif %}"
+                                                                name="address">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Mobile Number</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Mobile Number" value="{% if form_field %} {{form_field.mobile_no}} {% endif %}"
+                                                                name="mobile_no">
+                                                        </div>
+                                                        <fieldset class="form-group">
+                                                            <label for="customSelect">Country</label>
+                                                           {% include 'countrylistoptions.html' %} 
+                                                               
+                                                         
+
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row pt-3">
+                                                    <div class="col-6">
+                                                        <fieldset class="form-group floating-label-form-group">
+                                                            <label for="old-password">New Password <i class="fa fa-star text-danger"></i></label>
+                                                            <input type="password" class="form-control"
+                                                               name="password" id="user-password" placeholder="Enter Password" required>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <fieldset class="form-group floating-label-form-group">
+                                                            <label for="old-password">Re-type Password <i class="fa fa-star text-danger"></i></label>
+                                                            <input type="password" class="form-control"
+                                                              name="password2"  id="user-password" placeholder="Enter Password" required>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="alert alert-warning alert-dismissible mb-2" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <strong>Password Policy</strong> <br> 1. Password must at least 8 digit length <br> 2. Password must contain one Upper case Character <br> 3. Password must contain one Lower case Character <br> 4. Password must
+                                        contain one number <br> 5. Password must containt one of those special Character ( $, @, #, %) <br>
+
+                                    </div>
+                                    
+                                    <center>
+                                        <div class="form-actions ">
+                                            <a href="{% url 'agent_list' %}" class="btn btn-warning mr-1">
+                                                <i class="feather icon-x"></i> Cancel
+                                            </a>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa fa-check-square-o"></i> Save
+                                            </button>
+                                        </div>
+                                    </center>
+
+                                    </form> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
+            {% if error %}
+            
+            <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong>Oh snap!</strong> {{ error }}
+            </div>
+            {% endif %} 
+            {% if accountCreated %}
+            <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+                <h2 class="text-secondary"><strong>Success!</strong> Account Created.</h2>
+                <hr>
+                <p class="text-secondary">
+                    <b>Username</b>: {{ user_name}} <br>
+                    <b>Password</b>: {{ pass }} <br>
+                    <b>Full Name</b>: {% if agent_fullname %} {{ agent_fullname }} {% endif %} <br>
+                    <b>Email</b>:  {% if agent_email %} {{ agent_email }} {% endif %}  <br>
+                    
+
+                </p>
+            </div>
+            {% endif %}
+
+            <!-- users list start -->
+            <section class="users-list-wrapper">
+                <div class="users-list-table">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="users-list-datatable" class="table dataTable no-footer"
+                                                role="grid" aria-describedby="users-list-datatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="id: activate to sort column descending"
+                                                            style="width: 31px;" aria-sort="ascending">User No</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="username: activate to sort column ascending"
+                                                            style="width: 116px;">Full Name</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="name: activate to sort column ascending"
+                                                            style="width: 169px;">Joining Date</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="last activity: activate to sort column ascending"
+                                                            style="width: 123px;">Email </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">Phone </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="role: activate to sort column ascending"
+                                                            style="width: 50px;">Contry</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="status: activate to sort column ascending"
+                                                            style="width: 72px;">Action</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for a in all_agent %}
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">{{forloop.counter}}</td>
+                                                        <td><a
+                                                                href="{% url 'agent_update' a.id %}">{{a.full_name}}</a>
+                                                        </td>
+                                                        <td>{{a.created_date}}</td>
+                                                        <td>{{a.user.email}}</td>
+                                                        <td>{{a.mobile_no}}</td>
+                                                        <td>{{a.country}}</td>
+
+                                                        <td>
+                                                         <form id='agent-delete-{{a.id}}' action="{% url 'delete_agent' a.id %}" method="POST">
+                                                            {% csrf_token %}
+
+                                                                 <!-- view all user -->
+                                                            <a   href="{% url 'agent_user_list' a.id %}">
+                                                                <i class="feather icon-users text-warning"></i>
+                                                            </a>
+                                                                <!--view all user -->
+                                                        <a href="{% url 'agent_update' a.id %}"><i
+                                                                    class="feather icon-edit-1"></i></a>
+                                                            <a data-toggle="modal" id="onshownbtn-{{a.id}}"
+                                                                data-target="#onshown-{{a.id}}">
+                                                                <i class="feather icon-trash text-danger"></i>
+                                                            </a>
+                                                      
+                                                            <div class="modal fade text-left" id="onshown-{{a.id}}" tabindex="-1"
+                                                                role="dialog" aria-labelledby="myModalLabel22"
+                                                                aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title text-dark"
+                                                                                id="myModalLabel22">Do You Want To
+                                                                                Delete This User "{{a.full_name}}"</h5>
+                                                                            <button type="submit" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn grey btn-outline-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="button"
+                                                                               onClick="deleteFunction('{{a.id}}')" class="btn btn-outline-danger">Yes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </form> 
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                           
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- users list ends -->
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block custom_script %}
+<script>
+
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+        $("#agent-form").css('display', 'none');
+
+    })
+    function showAgentForm() {
+        $("#agent-form").toggle();
+    }
+function deleteFunction(id) {
+        did = "#agent-delete-"+id
+        console.log(did)
+        $(''+did).submit();  
+
+    }
+
+
+</script>
+
+
+</script>
+{% endblock custom_script %}

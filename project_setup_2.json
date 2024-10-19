@@ -1,0 +1,24 @@
+[
+    {
+    "model": "organization.navbarsupportedcontent",
+    "pk": 1,
+    "fields": {
+        "title": "Trade on the Most Popular Trading Platform",
+        "body": "Join a trusted and regulated online trading broke"
+    }
+},
+{
+    "model": "organization.userdashboardcontent",
+    "pk": 1,
+    "fields": {
+        "title": "Minds are like flowers, they only open when the time is right."
+    }
+},
+{
+    "model": "organization.userdashboardcontent",
+    "pk": 2,
+    "fields": {
+        "title": "An investment in knowledge pays the best interest."
+    }
+}
+]

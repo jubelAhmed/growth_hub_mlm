@@ -1,0 +1,238 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header ">
+            <div class="alert mb-2" style="background-color: #404E67;">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12 ">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item text-white pt-auto"> 
+                                Notification List
+                            </li>
+                            <li class="breadcrumb-item ml-auto text-white">
+
+                                <button type="button" onclick="showNotificationForm()"  class="btn btn-primary"> Add Notifications <i class="fa fa-plus"></i></button>
+                                
+                               
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+
+            <!-- Add Notification start  -->
+            <section id='notification-form' style="display:none">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-card-center"> Add Notification</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                        <li><a onclick="showNotificationForm()" ><i class="feather icon-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form class="form" action="{% url 'notification_list7' %}" method="POST">
+                                     {% csrf_token %}
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label for="eventRegInput2">Title</label>
+                                                <input type="text" id="eventRegInput2" class="form-control"
+                                                    placeholder="title" name="title">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="eventRegInput3">Details</label>
+                                                <input type="text" id="eventRegInput3" class="form-control"
+                                                    placeholder="Details" name="body">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="eventRegInput4">Duration Date</label>
+                                                <input type="date" id="eventRegInput4" class="form-control"
+                                                    placeholder="Date" name="duration">
+                                            </div>
+
+                                            <fieldset class="form-group">
+                                                <label for="customSelect">User Type</label>
+                                                <select class="custom-select" name="member_type" id="customSelect">
+                                                    <option value="ALL_MEMBER">All Member</option>
+                                                    <option value="AGENT">Agent</option>
+                                                    <option value="MEMBERS">Members</option>
+                                                    <option value="WINNER">Winner</option>
+                                                </select>
+                                            </fieldset>
+
+
+                                        </div>
+
+                                        <div class="form-actions center">
+                                            <button type="reset" class="btn btn-warning mr-1">
+                                                <i class="feather icon-x"></i> Cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa fa-check-square-o"></i> Save
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Add Notification Ends  -->
+
+            <!-- users list start -->
+            <section class="users-list-wrapper">
+
+                <div class="users-list-table-1">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="users-list-datatable" class="table dataTable no-footer"
+                                                role="grid" aria-describedby="users-list-datatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="id: activate to sort column descending"
+                                                            style="width: 31px;" aria-sort="ascending">User Id</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="username: activate to sort column ascending"
+                                                            style="width: 116px;">Title</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="name: activate to sort column ascending"
+                                                            style="width: 169px;">Details</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="last activity: activate to sort column ascending"
+                                                            style="width: 123px;">Date </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">time </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="status: activate to sort column ascending"
+                                                            style="width: 72px;">Action</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for notification in notification_all %}
+                                                    <tr role="row" class="even">
+                                                    
+                                                        <td class="sorting_1">{{notification.id}}</td>
+                                                        <td>{{notification.title}}</td>
+                                                        <td>{{notification.body}}</td>
+                                                        <td>{{notification.duration}}</td>
+                                                        <td>{{notification.member_type}} </td>
+                                                        
+                                                        <td>
+                                                        <form id='person-delete-{{notification.id}}' action="{% url 'delete_notification' notification.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                            <a href="{% url 'notification_update' notification.id %}"><i class="feather icon-edit-1"></i>
+                                                            
+                                                            </a>
+
+                                                            
+                                                        
+                                                            <a href=""  data-toggle="modal" id="onshownbtn" data-target="#onshown-{{notification.id}}">
+                                                                <i class="feather icon-trash text-danger"></i>
+                                                            </a>
+                                                        
+                                                            <div class="modal fade text-left" id="onshown-{{notification.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel22" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title text-dark" id="myModalLabel22">Do You Want To Delete this "{{notification.title}}"</h5>
+                                                                            <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="button" onClick="deleteFunction('{{notification.id}}')" class="btn btn-outline-danger">Yes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+
+                                                        </td>
+                                                    </tr>
+                                        {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- users list ends -->
+
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block custom_script %}
+<script>
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+        $("#notification-form").css('display','none');
+        
+    })
+    function showNotificationForm(){
+        $("#notification-form").toggle();
+    }
+
+
+function deleteFunction(id) {
+           /* if(!confirm("Are you sure you want to delete?")){
+                e.preventDefault();
+            }else{
+             $('#person-delete').submit();
+            }   */  
+          $('#person-delete-'+id).submit();          
+        }
+
+
+</script>
+{% endblock custom_script %}

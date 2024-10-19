@@ -1,0 +1,229 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="alert mb-2" style="background-color: #404E67;">
+            <div class="row breadcrumbs-top">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-white"> Use withdraw List
+                        </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        {% include 'users/alerts.html' %}
+
+        <div class="content-body">
+            <!-- users list start -->
+            <section class="users-list-wrapper">
+                <div class="users-list-table">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="users-list-datatable" class="table dataTable no-footer"
+                                                role="grid" aria-describedby="users-list-datatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="id: activate to sort column descending"
+                                                            style="width: 31px;" aria-sort="ascending">User No</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="username: activate to sort column ascending"
+                                                            style="width: 116px;">User Name</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="name: activate to sort column ascending"
+                                                            style="width: 169px;">Transfer Date</th>
+
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">Amount </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">Status</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="status: activate to sort column ascending"
+                                                            style="width: 72px;">Action</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for a in user_list %}
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">{{forloop.counter}}</td>
+                                                        <td><a
+                                                                href="{% url 'agent_update' a.id %}">{{a.user.username}}</a>
+                                                        </td>
+
+                                                        <td>{{a.created_date}}</td>
+
+                                                        <td>{{a.amount}}</td>
+                                                        <td
+                                                            class=" {% if a.status == 'PENDING' %}  text-danger {% elif a.status == 'DONE' %} text-success {% elif a.status == 'REJECTED' %} text-warning {%endif%}">
+                                                            {{a.status}}</td>
+
+                                                        <td>
+                                                            
+                                                            {% if a.status == 'DONE'%}
+                                                                No Action
+                                                            {% else %}
+                                                            <form id='person-status-{{a.id}}'
+                                                            action="{% url 'change_user_status' a.id %}"
+                                                            method="POST">
+                                                            {% csrf_token %}
+
+
+                                                            <!-- <a   href="{% url 'agent_user_list' a.id %}">
+                                                            <i class="feather icon-users text-warning"></i>
+                                                        </a>
+                                                           
+                                                    <a href="{% url 'agent_update' a.id %}"><i
+                                                                class="feather icon-edit-1"></i></a> -->
+                                                            <div class="btn-group" role="group">
+                                                                <button type="button"  class="btn-sm btn-success"
+                                                                    data-toggle="modal" id="onshownbtn-{{a.id}}"
+                                                                    href="{% url 'change_user_status' a.id %}"
+                                                                    data-target="#onshown-{{a.id}}" ><i
+                                                                        class="fa fa-check"></i> Success</button>
+                                                                <button type="button" class="btn-sm btn-danger"
+                                                                    data-toggle="modal" id="onshownbtn2-{{a.id}}"
+                                                                    data-target="#onshown2-{{a.id}}"><i
+                                                                        class="fa fa-eye"></i> Rejected</button>
+                                                            </div>
+
+                                                            <input type="text" id='user_status-{{a.id}}'
+                                                                name='user_status-{{a.id}}' hidden>
+
+                                                            <div class="modal fade text-left" id="onshown-{{a.id}}"
+                                                                tabindex="-1" role="dialog"
+                                                                aria-labelledby="myModalLabel22" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title text-success"
+                                                                                id="myModalLabel22">Do You Want To
+                                                                                update "{{a.user.username}}"
+                                                                                Transaction status Done</h5>
+                                                                            <button type="submit" class="close"
+                                                                                data-dismiss="modal"
+                                                                                aria-label="Close">
+                                                                                <span
+                                                                                    aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn grey btn-outline-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="button"
+                                                                                onClick="submit_status('{{a.id}}');"
+                                                                                class="btn btn-outline-danger">Yes</button>
+                                                                            {% comment %} <input
+                                                                                id="hold_delete_user-{{a.id}}"
+                                                                                name="status" value="partial"
+                                                                                type="text" hidden> {% endcomment %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="modal fade text-left" id="onshown2-{{a.id}}"
+                                                                tabindex="-1" role="dialog"
+                                                                aria-labelledby="myModalLabel22" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title text-danger"
+                                                                                id="myModalLabel22">Do You Want To
+                                                                                update "{{a.user.username}}"
+                                                                                Transaction status Reject</h5>
+                                                                            <button type="submit" class="close"
+                                                                                data-dismiss="modal"
+                                                                                aria-label="Close">
+                                                                                <span
+                                                                                    aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn grey btn-outline-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="button"
+                                                                                onClick="person_reject('{{a.id}}')"
+                                                                                class="btn btn-outline-danger">Yes</button>
+                                                                            <input id="hold_delete_user-{{a.id}}"
+                                                                                name="status" value="partial"
+                                                                                type="text" hidden>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                            {% endif %}
+                                                            
+
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- users list ends -->
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+    {% block custom_script %}
+    <script>
+        function submit_status(id) {
+            $("#user_status-" + id).attr("value", "success");
+
+            $("#person-status-" + id).submit();
+
+        }
+
+        function person_reject(id) {
+            $("#user_status-" + id).attr("value", "rejected");
+
+            $("#person-status-" + id).submit();
+        }
+    </script>
+    {% endblock custom_script %}

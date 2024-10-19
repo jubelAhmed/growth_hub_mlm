@@ -1,0 +1,306 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="alert mb-2" style="background-color: #404E67;">
+            <div class="row breadcrumbs-top">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-white"> Agent User List
+                        </li>
+                        <li class="breadcrumb-item ml-auto text-white">
+
+                            
+
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section id='agent-form' style="display:none">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-card-center"> NEW AGENT ADD </h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                        <li><a onclick="showAgentForm()"><i class="feather icon-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <div class="card-body">
+                                        <form class="form" action="{% url 'agent_list' %}" method="POST">
+                                         {% csrf_token %}
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput2">User Name </label>
+                                                            <input type="text" id="eventRegInput2" class="form-control"
+                                                                placeholder="User Name " name="username">
+                                                        </div>
+                                            
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Division</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Division" name="division">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label for="eventRegInput3">District</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="District" name="district">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Thana </label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Thana " name="thana">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label for="eventRegInput3">Number</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="BTCAddress" name="BTCAddress">
+                                                        </div>                                                                                                                                                                     
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput4">Birthday</label>
+                                                            <input type="date" id="eventRegInput4"
+                                                                class="form-control" placeholder="Date" name="date">
+
+                                                        </div>
+
+                                                 
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Full Name</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                            class="form-control" placeholder="Name" name="full_name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Email</label>
+                                                            <input type="input" id="eventRegInput3"
+                                                                class="form-control" placeholder="Email" name="email">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Address</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Address"
+                                                                name="address">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="eventRegInput3">Mobile Number</label>
+                                                            <input type="textarea" id="eventRegInput3"
+                                                                class="form-control" placeholder="Mobile Number"
+                                                                name="mobile_no">
+                                                        </div>
+                                                        <fieldset class="form-group">
+                                                            <label for="customSelect">Country</label>
+                                                            <select class="custom-select " id="customSelect" name="country">
+                                                                <option selected="Bangladesh">Bangladesh</option>
+                                                                <option value="India">India</option>
+                                                                <option value="Japan">Japan</option>
+                                                               
+                                                            </select>
+
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row pt-3">
+                                                    <div class="col-6">
+                                                        <fieldset class="form-group floating-label-form-group">
+                                                            <label for="old-password">New Password</label>
+                                                            <input type="password" class="form-control"
+                                                               name="password" id="user-password" placeholder="Enter Password">
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <fieldset class="form-group floating-label-form-group">
+                                                            <label for="old-password">Re-type Password</label>
+                                                            <input type="password" class="form-control"
+                                                              name="password2"  id="user-password" placeholder="Enter Password">
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <center>
+                                        <div class="form-actions ">
+                                            <a href="{% url 'agent_list' %}" class="btn btn-warning mr-1">
+                                                <i class="feather icon-x"></i> Cancel
+                                            </a>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa fa-check-square-o"></i> Save
+                                            </button>
+                                        </div>
+                                    </center>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- users list start -->
+            <section class="users-list-wrapper">
+                <div class="users-list-table">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="users-list-datatable" class="table dataTable no-footer"
+                                                role="grid" aria-describedby="users-list-datatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="id: activate to sort column descending"
+                                                            style="width: 31px;" aria-sort="ascending">User Id</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="username: activate to sort column ascending"
+                                                            style="width: 116px;">Full Name</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="name: activate to sort column ascending"
+                                                            style="width: 169px;">Joining Date</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="last activity: activate to sort column ascending"
+                                                            style="width: 123px;">Email </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">Phone </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="role: activate to sort column ascending"
+                                                            style="width: 50px;">Contry</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="status: activate to sort column ascending"
+                                                            style="width: 72px;">Action</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for user in user_list %}
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">{{user.id}}</td>
+                                                        <td><a
+                                                                href="#">{{user.full_name}}</a>
+                                                        </td>
+                                                        <td>{{user.created_date}}</td>
+                                                        <td>{{user.user.email}}</td>
+                                                        <td>{{user.mobile_no}}</td>
+                                                        <td>{{user.country}}</td>
+
+                                                        <td>
+                                                         <form id='agent-delete' action="" method="POST">
+                                                            {% csrf_token %}
+
+                                                        <a href=""><i
+                                                                    class="feather icon-edit-1"></i>
+                                                            </a>
+
+                                                            <a data-toggle="modal" id="onshownbtn"
+                                                                data-target="#onshown" >
+                                                                <i class="feather icon-trash text-danger"></i>
+                                                            </a>
+                                                            <div class="modal fade text-left" id="onshown" tabindex="-1"
+                                                                role="dialog" aria-labelledby="myModalLabel22"
+                                                                aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title text-dark"
+                                                                                id="myModalLabel22">Do You Want To
+                                                                                Delete This User</h5>
+                                                                            <button type="submit" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn grey btn-outline-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="button"
+                                                                               onClick="deleteFunction()" class="btn btn-outline-danger">Yes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </form> 
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                           
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- users list ends -->
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block custom_script %}
+<script>
+
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+        $("#agent-form").css('display', 'none');
+
+    })
+    function showAgentForm() {
+        $("#agent-form").toggle();
+    }
+function deleteFunction(e) {
+       
+          $('#agent-delete').submit();          
+        }
+
+
+</script>
+
+
+</script>
+{% endblock custom_script %}

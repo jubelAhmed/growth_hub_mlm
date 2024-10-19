@@ -1,0 +1,165 @@
+{% extends 'users/base.html' %} {% load static %} {% block custom_style %}
+
+<style>
+    /* body{ font-size: 20px;}  */
+    
+    .banner {
+        position: relative;
+        width: 100%;
+        margin: 0
+    }
+    
+    .heading77 {
+        color: White;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .bg_image {
+        image-rendering: pixelated;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    @media screen and (min-width: 300px) {
+        .heading77 {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media screen and (min-width: 576px) {
+        .heading77 {
+            font-size: 1.25rem;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .heading77 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .heading77 {
+            font-size: 1.75rem;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .heading77 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+{% endblock custom_style %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<div class="banner  bg-teal bg-darken-4" style="height:200px">
+    <img width="100%" height="100%" src="{% static 'app-assets/images/backgrounds/images-16.jpg' %}" style="width:100%;opacity: 0.3; object-fit: cover ; ">
+    <p class="heading77 text-bold-400 font-large-1"> Downline Network </p>
+</div>
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-body ">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    {% if all_downline_list %} {% for downline_user in all_downline_list %}
+                    <div class="mx-1">
+
+                        <div class="shadow">
+                            <div class="card rounded ">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-3 col-sm-3">
+                                                <div class="">
+                                                    <div class="avatar a bg-primary">
+                                                        <span>{{ downline_user.full_name|make_list|first|title }}</span>
+                                                        <span class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-9 col-sm-9">
+                                                <div class="media d-flex text-right">
+                                                    <div class="media-body">
+                                                        <h5 class=" text-secondary">
+                                                            {{ downline_user.full_name|title }}</h5>
+
+
+
+
+
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mt-1">
+                                            <div class="col-3 col-sm-3 text-left">
+                                                <div class=" badge {% if downline_user.package_id.package_name|lower  == 'premium'  %}  badge-danger {%else%} badge-warning {%endif%} round-lg">
+                                                    {{downline_user.package_id.package_name}}</div>
+                                            </div>
+                                            <div class="col-9 col-sm-9 text-right">
+                                                <h6 class="text-secondary">
+                                                    Sponsor
+                                                    <div class="badge  badge-primary">
+                                                        {{downline_user.sponsor_count}} </div>
+
+                                                </h6>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row justify-content-center ">
+                            <div class="col-3 col-sm-3 text-center ml-1">
+                                <span class="badge badge-pill badge-sm badge-primary badge-up rounded-circle badge-glow">
+                                            <i class="fa fa-2x fa-arrow-down text-white "></i>
+                                        </span>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                    {% endfor %} {% else %}
+                    <div class="text-center text-secondary">
+                        <h6> You dont have any network </h6>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,297 @@
+{% extends 'users/base.html' %} {% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+
+<style>
+    @media (min-width: 576px) {
+        .heading77 {
+            font-size: 1.25rem;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .heading77 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .heading77 {
+            font-size: 1.75rem;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .heading77 {
+            font-size: 2rem;
+        }
+    }
+    /* 
+    * {
+        margin: 0;
+        padding: 0;
+    } */
+    /* body{ font-size: 20px;}  */
+    
+    .banner {
+        position: relative;
+        width: 100%;
+        margin: 0
+    }
+    
+    .heading77 {
+        color: White;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+</style>
+
+<div class="app-content content">
+
+
+    <div class="content-wrapper ">
+        <div class="container">
+            <div class="px-2 mb-2 bg-success bg-darken-4">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        {% if error %}
+                        <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            <strong>Oh snap!</strong> {{ error }}.
+                        </div>
+                        {% endif %}
+                        
+                       
+                        
+                        {% if success %}
+                        <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                             {{ success }}.
+                        </div>
+                        {% endif %} {% if received %}
+                        <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            <strong>Oh snap!</strong> {{ received }}.
+                        </div>
+                        {% endif %}
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item text-white mr-auto pt-1">
+                                <p class="text-bold-600 text-capitalize font-medium-2"> Current Balance : <strong class=""> {{ balance.amount }} €</strong> </p>
+                            </li>
+                            <li class="breadcrumb-item ml-auto text-white py-1 ">
+
+                                <button type="button" class="btn btn-outline-white text-bold-600 text-capitalize font-medium-2" data-toggle="modal" data-target="#inlineForm">
+                                    Balance Transfer <i class="fa fa-plus"></i>
+                                </button>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'users/alerts.html' %}
+
+
+            <!-- Modal -->
+            <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <label class="modal-title text-text-bold-600" id="myModalLabel33">BALANCE {{ user.get_username}}
+                                Transfer</label>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <form action="{% url 'balance_transfer' %}" method="POST">
+                            {% csrf_token %}
+                            <div style="display: none;" id="confirmation">
+                                <p class="mt-2 ml-2 mr-2 warning" style="font-size: 18px; font-weight: bold;">Are you sure to transfer money from your account?</p>
+                                <table class="table ml-2 mr-2" style="max-width: 90%;">
+                                    <tr>
+                                        <td>Transfer Amount</td>
+                                        <td id="susd">0 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receiver Username</td>
+                                        <td id="susername">none</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>PIN Code:</td>
+                                        <td><b id="spin">0</b></td>
+                                    </tr>
+                                </table>
+                                <center>
+                                    <input type="submit" class="btn btn-outline-warning mb-3" value="Confirm Transfer Money">
+                                </center>
+
+                            </div>
+                            <div id="form-body">
+                                <div class="modal-body ">
+                                    <label>Receiver Username (Must ba an Agent)</label>
+                                    <div class="form-group">
+                                        <input type="text" name="agentusername" id="agentusername" placeholder="Agent username" class="form-control">
+                                    </div>
+
+                                    <label>Withdrawal Ammount</label>
+                                    <div class="form-group">
+                                        <input type="number" name="amount" id="amount" placeholder="Withdrawal Ammount" class="form-control">
+                                    </div>
+
+                                    <label>Transection PIN</label>
+                                    <div class="form-group">
+                                        <input type="number" name="pin" id="pincode" placeholder="Transection PIN " class="form-control">
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="reset" class="btn btn-outline-secondary" data-dismiss="modal" value="close">
+                                    <button class="btn btn-outline-success" type="button" onclick="confirm()"> Transfer Money </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="content-body">
+
+
+            <div class="container">
+                <section id="multiple-table">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Balance Transfer Records</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-content collapse show">
+                                    <div class="card-body card-dashboard">
+
+                                        <div id="DataTables_Table_2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                                            <table class="table table-striped table-bordered multiple-control-elements dataTable" id="DataTables_Table_2" aria-describedby="DataTables_Table_2_info" role="grid">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 207px;">Sender</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 331px;">Receiver</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 152px;">Amount</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 70px;">Status</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 145px;">Date</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for data in history %}
+                                                    <tr role="row">
+                                                        <td>{{ data.sender }}</td>
+                                                        <td>{{ data.receiver }}</td>
+                                                        <td>{{ data.amount }}</td>
+
+
+                                                        <td>
+                                                            {% if data.receiver == user and data.status == "PENDING" %}
+                                                            <div class="" >
+                                                                <div class="">
+                                                                    <form action="{% url 'transfer_action' request.user.username data.id 'accept' %}" method="GET">
+                                                                        <input type="submit" class="btn btn-sm btn-success ml-5" value="Accept" />
+                                                                    </form>
+                                                                </div>
+                                                                <div style="margin-top:-22px">
+                                                                    <form action="{% url 'transfer_action' request.user.username data.id 'reject' %}" method="GET">
+                                                                        <input type="submit" class="btn btn-sm btn-danger" value="Reject" />
+                                                                    </form>
+                                                                </div>
+                                                                
+                                                               
+                                                            </div>
+                                                            
+                                                            {% else %} {{ data.status }} {% endif %}
+                                                        </td>
+                                                        <td>{{ data.created_date }}</td>
+
+                                                    </tr>
+
+                                                    {% endfor %}
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th rowspan="1" colspan="1">Sender</th>
+                                                        <th rowspan="1" colspan="1">Receiver</th>
+                                                        <th rowspan="1" colspan="1">Amount</th>
+                                                        <th rowspan="1" colspan="1">Status</th>
+                                                        <th rowspan="1" colspan="1">Date </th>
+
+
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block custom_script %}
+<script>
+    $(document).ready(function() {
+        $("#DataTables_Table_2").DataTable();
+    })
+</script>
+<script>
+    // Script for confirm modal
+    function confirm(e) {
+        //  Hide Input form
+        var f = document.getElementById('form-body').style.display = 'none'
+        var c = document.getElementById('confirmation').style.display = ""
+
+        var amount = document.getElementById('amount').value
+        var agent = document.getElementById('agentusername').value
+        var pin = document.getElementById('pincode').value
+
+        document.getElementById('susd').innerHTML = amount
+        document.getElementById('susername').innerHTML = agent
+        document.getElementById('spin').innerHTML = pin
+
+
+
+    }
+</script>
+{% endblock custom_script %}

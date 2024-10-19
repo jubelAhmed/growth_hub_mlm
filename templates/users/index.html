@@ -1,0 +1,493 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block custom_style %}
+
+<style>
+    /* body{ font-size: 20px;}  */
+    .banner {
+        position: relative;
+        width: 100%;
+        margin: 0
+    }
+
+    .heading77 {
+        color: White;
+        position: absolute;
+        top: 20%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .bg_image {
+        image-rendering: pixelated;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    @media screen and (min-width : 300px) {
+        .heading77 {
+            font-size: 1.2rem;
+
+        }
+    }
+
+    @media screen and (min-width : 576px) {
+        .heading77 {
+            font-size: 1.25rem;
+
+        }
+    }
+
+    @media (min-width: 768px) {
+        .heading77 {
+            font-size: 1.5rem;
+
+        }
+    }
+
+    @media (min-width: 992px) {
+        .heading77 {
+            font-size: 1.75rem;
+
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .heading77 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+{% endblock custom_style %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<!-- Code Written By Wridoy -->
+
+
+<div class="banner bg-success" style="height:200px">
+    <img class="bg_image" width="100%" height="100%" src="{% static 'app-assets/images/backgrounds/bg_cover_8.png' %}"
+        style="width:100%; opacity: 0.5;">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide heading77 " data-ride="carousel">
+       
+        <div class="carousel-inner">
+        {% for p in user_dasboard_content %}
+            <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %} text-center p-4">
+           
+                <p>{{ p.title }}</p>
+
+            </div>
+         {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+
+
+        <div class="content-body ">
+
+            <div class="">
+                <div class="mb-3">
+                    <div class="row justify-content-center ">
+                        {% if winner_list %}
+
+                        {% for winner in winner_list %}
+
+                        <div class="col-md-3">
+                            <div class="card rounded-lg " style="height: 300px;">
+                                <div class="card rounded">
+                                    <div class="card-content text-center">
+                                        <div class="avatar avatar-xl " style="border-right:3px dotted rgb(250, 152, 25)">
+                                         {% if winner.photo %}
+
+                                            <img src="{{ winner.photo.url }}" class="rounded-circle img-border " alt="Winner image">
+                                          {% else %}
+                                          <img src="{% static 'app-assets/images/avatar.jpg' %}" class="rounded-circle img-border" style="border-right:3px dotted rgb(250, 152, 25)" alt="Profile image">
+                                          {% endif %}
+                                           
+                                        </div>
+
+                                        <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}"
+                                            alt="Lights" width="130" height="50%">
+                                        
+                                        <div class="card-body">
+                                            <h4 style="line-height: 0.3; color: rgb(250, 152, 25);" class="card-title">
+                                                Congrats!!</h4>
+                                            <h4 class="" style="  line-height: 0.3;"> Today 
+                                                <span class="text-bold-700"> {{winner.package_id.package_name|title}} </span> Winner </h6>
+                                            
+                                            <h5 class="card-text text-success pt-1 text-bold-700"> 
+                                                 <i class="fa fa-trophy "></i> 
+                                                {{winner.full_name|title}} 
+                                                <i class="fa fa-trophy "></i> 
+                                            
+                                            </h5>
+                                            
+                                            <h5 class="card-text text-success pt-1 text-bold-300"> 
+                                                
+                                                {{winner.mobile_no|title}}
+                                           </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        {% endfor %}
+
+                        {% else %}
+                        <div class="col-md-5">
+                            <div class="card rounded-lg " style="height: 80px;">
+                                <div class="card rounded">
+                                    <div class="card-content text-center">
+                                        <!-- <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}"
+                                            alt="Lights" width="20%" height="20%"> -->
+                                        <div class="card-body">
+                                            
+                                            <h4 class="text-warning " style="line-height: 0.3;"> <i class="fa fa-trophy"></i> Winner Display Will Be Soon <i class="fa fa-trophy"></i> </h4>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                       
+                       
+                        
+
+
+                    </div>
+                </div>
+
+                
+
+                <div class="row justify-content-center">
+                    <!-- wallet card design start  -->
+                    <div class="col-md-3 ">
+
+                        <div class="card mx-0 pt-2   " >
+
+
+                            <!-- <div class="text-center mb-2 bg-success  bg-darken-3">
+                                <div class="  text-center" style="font-weight: 400;padding: 0.35em 0.4em;">
+                                    <h3 class="text-white  "> <strong> Wallet <i class="fa fa-wallet"></i> </strong> </h3>
+
+                                </div>
+
+                            </div> -->
+                            
+
+                            <div class="card rounded-lg mx-2 bg-red bg-3 ">
+                                <div class="card-content ">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                            <div class="media-body">
+                                                <h1 class=" text-white">€
+                                                    <span>
+                                                        {% if profile.current_wallet %}
+                                                        {{profile.current_wallet}}
+                                                      
+                                                        {% elif agent_balance %}
+                                                            {{agent_balance.amount}}
+                                                        {% else %}
+                                                        
+                                                        0.0
+                                                        {%endif%}
+                                                    </span>
+
+                                                </h1>
+                                                <span class="text-white">Current Wallet</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if usertype == 'user' %}
+                            <div class="card rounded-lg mx-2 bg-success bg-darken-2 bg-light">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                            <div class="media-body">
+                                                <h1 class=" text-white"> €
+                                                    <span>
+                                                        {% if profile.registration_wallet %}
+                                                        {{profile.registration_wallet}}
+                                                        {% else %}
+                                                        0.0
+                                                        {%endif%}
+                                                    </span>
+                                                </h1>
+                                                <span class="text-white">Registration Wallet </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card rounded-lg mx-2 bg-primary bg-darken-2 bg-light">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                            <div class="media-body">
+                                                <h1 class=" text-white"> €
+                                                    <span>
+                                                        {% if profile.sponsor_wallet %}
+                                                        {{profile.sponsor_wallet}}
+                                                        {%else%}
+                                                        0.0
+                                                        {%endif%}
+                                                    </span>
+                                                </h1>
+                                                <span class="text-white">Sopnsor Wallet</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- Wallet card Design End  -->
+                    </div>
+                    <!-- wallet card design END  -->
+
+                    <!-- Primary package design start  -->
+                    <div class="col-md-3">
+
+                        <div class="card mx-0 ">
+
+                            <div class="text-center mb-2 bg-secondary">
+                                <div class="badge badge-secondary round-lg text-center">
+                                    <h3 class="text-white "> <strong> Primary</strong> <i class="fa fa-star"></i> </h3>
+
+                                </div>
+
+                            </div>
+
+                            {% if primary_user_list %}
+
+                            {% for primary_user in primary_user_list %}
+                            <div class="mx-2">
+
+                                <div class="shadow">
+                                    <div class="card rounded ">
+                                        <div class="card-content">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-3 col-sm-3">
+                                                        <div class="">
+                                                            <div class="avatar a bg-secondary">
+                                                                <span>{{ primary_user.full_name|make_list|first|title }}</span>
+                                                                <span
+                                                                    class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-9 col-sm-9">
+                                                        <div class="media d-flex text-right">
+                                                            <div class="media-body">
+                                                                <h5 class=" text-secondary">
+                                                                    {{ primary_user.full_name|title }}</h5>
+
+
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row justify-content-between mt-1">
+                                                    <div class="col-3 col-sm-3 text-left">
+                                                        <div class=" badge badge-secondary round-lg">Primary <i
+                                                                class="fa fa-star"></i></div>
+                                                    </div>
+                                                    <div class="col-9 col-sm-9 text-right">
+                                                        <h6 class="text-secondary">
+                                                            Earn
+                                                            <div class="badge  badge-danger">
+                                                                {{primary_user.current_wallet}} € </div>
+
+                                                        </h6>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            {% endfor %}
+
+                            {% else %}
+                            <div class="text-center text-secondary">
+                                <h6>No Primary User Added </h6>
+                            </div>
+                            {% endif %}
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- Primary package design end  -->
+
+                    <!-- Primium package design start  -->
+                    <div class="col-md-3">
+
+                        <div class="card mx-0 ">
+
+                            <div class="text-center mb-2 bg-primary">
+                                <div class="badge badge-primary round-lg text-center">
+                                    <h3 class="text-white "> <strong> Premium</strong>
+                                        <span class="text-white"> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                        </span>
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div class="all-premium">
+
+                                {% if premium_user_list %}
+
+                                {% for premium_user in premium_user_list %}
+
+                                <div class="mx-2">
+
+                                    <div class="shadow">
+                                        <div class="card rounded ">
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-3 col-sm-3">
+                                                            <div class="">
+                                                                <div class="avatar a bg-primary">
+                                                                    <span>{{ premium_user.full_name|make_list|first|title }}</span>
+                                                                    <span
+                                                                        class="badge badge-pill badge-sm badge-danger badge-up rounded-circle">{{forloop.counter}}</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9 col-sm-9">
+                                                            <div class="media d-flex text-right">
+                                                                <div class="media-body">
+                                                                    <h5 class=" text-primary">
+                                                                        {{ premium_user.full_name|title }}</h5>
+
+
+                                                                </div>
+                                                            </div>
+
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row justify-content-between mt-1">
+                                                        <div class="col-3 col-sm-3 text-left">
+                                                            <div class=" badge badge-primary round-lg">Premium <i
+                                                                    class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i></div>
+                                                        </div>
+                                                        <div class="col-9 col-sm-9 text-right">
+                                                            <h6 class="text-primary">
+                                                                Earn
+                                                                <div class="badge   badge-danger">
+                                                                    {{premium_user.current_wallet}} €</div>
+
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                {% endfor %}
+
+                                {% else %}
+                                <div class="text-center text-primary">
+                                    <h6>No Premium User Added </h6>
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- Primium package design end  -->
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Winner Card Design start -->
+
+
+<!-- End Card Design  -->
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block custom_script %}
+
+<script>
+    $('.carousel').carousel({
+        interval: 2000
+    })
+</script>
+{% endblock custom_script %}

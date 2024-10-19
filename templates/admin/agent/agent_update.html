@@ -1,0 +1,138 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="app-content content" >
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header ">
+            <div class="alert mb-2" style="background-color: #404E67;">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12 ">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item text-white pt-auto">
+                                Agent Update
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+
+            <!-- update Agent  start  -->
+            <section id='agent-form'>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-card-center"> Update Agent</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form class="form" action="" method="POST" enctype="multipart/form-data">
+                                          {% csrf_token %}
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput2">Agent Name </label>
+                                                        <input type="text" id="eventRegInput2" class="form-control"
+                                                           value="{{agent.full_name}}" placeholder="Agent Name" name="full_name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput33">Email</label>
+                                                        <input type="text" id="eventRegInput33" class="form-control"
+                                                            placeholder="Email" value="{{agent.user.email}}" name="email" disabled>
+                                                    </div>
+
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">User Photo</label>
+                                                        <img src="" width="100px"
+                                                            style="border-radius: 50%; border-color: black; border-width: 5px;" />
+                                                        <input type="file" id="img" name="photo" value=" "
+                                                            accept="image/*">
+                                                        
+                                                    </fieldset>
+
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput35">Phone</label>
+                                                        <input type="text" id="eventRegInput35" class="form-control"
+                                                            placeholder="Number" value="{{agent.mobile_no}}" name="mobile_no">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="eventRegInput37">Address</label>
+                                                        <input type="textarea" id="eventRegInput37" class="form-control"
+                                                            placeholder="Address" value="{{agent.address}}" name="address">
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="col-4">
+                                                   
+                                                    <fieldset class="form-group" >
+                                                      
+                                                        <label for="eventdate">Birth Date</label>
+                                                        <input type="date" id="eventdate"
+                                                            class="form-control" value="{{agent.birth_date|date:"Y-m-d" }}" placeholder="birth-date" name="birth_date">
+                                                    </fieldset>
+                                                    
+                                                    <fieldset class="form-group">
+                                                        <label for="customSelect">Country</label>
+                                                        <select class="custom-select" name="country" id="customSelect" value="{{agent.country}}">
+                                                                 <option selected="Bangladesh">Bangladesh</option>
+                                                                <option value="India">India</option>
+                                                                <option value="Japan">Japan</option>
+                                                        </select>
+                                                    </fieldset>
+
+                                                </div>
+                                            </div>
+                                       <div class="form-actions center">
+                                            <a href="{% url 'agent_list' %}" class="btn btn-warning mr-1">
+                                                <i class="feather icon-x"></i> Cancel
+                                            </a>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa fa-check-square-o"></i> Update
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block custom_script %}
+<script>
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+        //$("#notification-form").css('display','none');
+
+        
+
+    })
+
+
+</script>
+{% endblock custom_script %}

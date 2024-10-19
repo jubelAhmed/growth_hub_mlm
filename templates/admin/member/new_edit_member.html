@@ -1,0 +1,166 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-7 col-md-8 col-10 p-0">
+                        <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card-header border-0 pb-0">
+                                <div class="card-title text-center">
+                                    <!-- <img src="{% static 'app-assets/images/logo/stack-logo-dark.png' %}"
+                                        alt="branding logo"> -->
+                                    <h4 class="text-primary ">My Profile</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="card-content">
+                                <div class="card-body pt-3">
+
+                                    <form class="form-horizontal" action="" method="POST" >
+                                    {% csrf_token %}
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <!-- User Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-name">User Name / Referral Key</label>
+                                                        <input type="text" class="form-control" id="user-name"
+                                                           value="{{edit_new_member.user.username}}" name="username" placeholder="User Name" disabled="">
+                                                    </fieldset>
+                                                    <!-- User Full Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Full Name</label>
+                                                        <input type="text" class="form-control" id="full-name"
+                                                          name="full_name" value="{{ edit_new_member.full_name}}" placeholder="Full name" >
+                                                    </fieldset>
+                                                  <!-- Birth Date -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Birth Date : </label>
+                                                         <input type="text" class="form-control" id="birthday" value="{{ edit_new_member.birth_date }}" name="birth_date" disabled="">
+                                                    </fieldset>
+                                                    <!-- User photo  -->
+                                   
+                                                    <!-- User package  -->
+                                                   
+                                                   <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-member-pakage">Member Pakage </label>
+                                                        <input type="text" class="form-control" id="member-pakage"
+                                                        value="{{ edit_new_member.package_id}}" placeholder="Member Pakage" disabled>
+                                                    </fieldset>
+
+                                                     <!-- Sponsor Name  -->
+                                                     <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-sponsor">Sponsor</label>
+                                                        <input type="text" value="{{ edit_new_member.sponsor }}" class="form-control" id="sponsor"
+                                                            placeholder="Sponsor" disabled="">
+                                                    </fieldset>
+
+                                             
+                                                   
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                    <!-- User Email  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-email">Your Email Address</label>
+                                                        <input type="email" class="form-control" id="user-email" 
+                                                           value="{{ edit_new_member.user.email }}" placeholder="Your Email Address" disabled="">
+                                                    </fieldset>
+
+                                                    <!-- User Phone Number  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-phone-number">Phone Number</label>
+                                                        <input type="number" name="mobile_no" class="form-control" id="user-number"
+                                                           value="{{ edit_new_member.mobile_no }}" placeholder="User Phone Number ">
+                                                    </fieldset>
+                                                    <!-- Address  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-address-address">Address </label>
+                                                        <input type="text" class="form-control" name="address" id="user-address"
+                                                          value="{{ edit_new_member.address }}"  placeholder="Address">
+                                                    </fieldset>
+
+                                                    <!-- Country  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-country">Country </label>
+                                                        <input type="text" class="form-control" id="user-country"
+                                                           value="{{ edit_new_member.country }}" placeholder="country" name="country">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container-fluid">
+                                            <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                    class="feather icon-user"></i> Profile Update </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <br>
+                                {% comment %} <div class="card-body pt-3">
+                                    {% if passResetsuccess %}
+                                    <div class="alert alert-success border-0 mb-2" role="alert">
+                                        <strong>Well done!</strong> {{ passResetsuccess }}
+                                    </div>
+                                    {% endif %}
+                                    {% if wrongpass %}
+                                    <div class="alert alert-danger border-0 mb-2" role="alert">
+                                        <strong>Oh snap!</strong> {{ wrongpass }}
+                                    </div>
+                                    {% endif  %}
+                                    <form class="form-horizontal" method="POST" action="{% url 'changepassword' %}" >
+                                          {% csrf_token %}
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <!-- Password  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="old-password">Old Password</label>
+                                                        <input type="password" class="form-control" name="oldpass" id="user-password"
+                                                            placeholder="Enter Password">
+                                                    </fieldset>
+
+                                                    <!-- Password -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-password">Enter New Password</label>
+                                                        <input type="password" name="newpass" class="form-control" id="user-password"
+                                                            placeholder="Enter Password">
+                                                    </fieldset>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <!-- Password  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="re-password"> Enter Re-type Password </label>
+                                                        <input type="password" name="anewpass" class="form-control" id="user-password"
+                                                            placeholder="Enter Password Again">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container-fluid">
+                                            <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                    class="feather icon-user"></i> Password Update </button>
+                                        </div>
+
+                                    </form>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+{% endblock %}

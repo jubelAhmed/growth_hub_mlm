@@ -1,0 +1,2941 @@
+[
+    {
+        "model": "user_admin.packagebalance",
+        "pk": 1,
+        "fields": {
+            "profit_percentage": 2.5,
+            "sponsor_percentage": 15.0,
+            "created_at": "2021-01-29T18:49:43.403Z",
+            "updated_at": "2021-01-29T18:49:43.404Z"
+        }
+    },
+    {
+        "model": "user_admin.packagebalance",
+        "pk": 2,
+        "fields": {
+            "profit_percentage": 2.5,
+            "sponsor_percentage": 15.0,
+            "created_at": "2021-01-29T18:49:52.886Z",
+            "updated_at": "2021-01-29T18:49:52.886Z"
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 1,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 3
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 2,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 5
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 3,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 6
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 4,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 7
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 5,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 8
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 6,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 11
+        }
+    },
+    {
+        "model": "user_profile.sponsor",
+        "pk": 7,
+        "fields": {
+            "sponsor": null,
+            "reg_user": 13
+        }
+    },
+    {
+        "model": "user_profile.package",
+        "pk": 1,
+        "fields": {
+            "package_name": "Primary",
+            "package_amount": 20.0,
+            "display_package_name": "Primary",
+            "created_at": "2021-01-27T05:02:36.770Z",
+            "updated_at": "2021-01-27T05:02:36.770Z",
+            "description": ""
+        }
+    },
+    {
+        "model": "user_profile.package",
+        "pk": 2,
+        "fields": {
+            "package_name": "Premium",
+            "package_amount": 100.0,
+            "display_package_name": "Premium",
+            "created_at": "2021-01-27T05:02:36.770Z",
+            "updated_at": "2021-01-27T05:02:36.770Z",
+            "description": ""
+        }
+    },
+    {
+        "model": "user_profile.profile",
+        "pk": 5,
+        "fields": {
+            "user": 2,
+            "full_name": "Imran hossain",
+            "address": "vbhjh",
+            "country": "bangladesh",
+            "division": "khulna",
+            "district": "kkkjhh",
+            "thana": "tala",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": null,
+            "package_id": 1,
+            "sponsor": null,
+            "agent": 2,
+            "user_position_status": "ACTIVE",
+            "status": true,
+            "birth_date": null,
+            "current_wallet": 0.0,
+            "registration_wallet": 0.0,
+            "sponsor_wallet": 0.0,
+            "founder_wallet": 0.0,
+            "user_current_status": "WINNER",
+            "created_date": "2021-02-05T09:47:08.191Z",
+            "updated_date": "2021-02-05T09:47:08.191Z"
+        }
+    },
+    {
+        "model": "user_profile.profile",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "full_name": "vampire",
+            "address": "vbhjh",
+            "country": "Bangladesh",
+            "division": null,
+            "district": null,
+            "thana": null,
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": null,
+            "package_id": 1,
+            "sponsor": null,
+            "agent": null,
+            "user_position_status": "Active",
+            "status": true,
+            "birth_date": null,
+            "current_wallet": 20.0,
+            "registration_wallet": 20.0,
+            "sponsor_wallet": 0.0,
+            "founder_wallet": 0.0,
+            "user_current_status": "NEW_USER",
+            "created_date": "2021-02-06T07:03:48.483Z",
+            "updated_date": "2021-02-06T07:03:48.483Z"
+        }
+    },
+    {
+        "model": "user_profile.profile",
+        "pk": 8,
+        "fields": {
+            "user": 8,
+            "full_name": "sardar",
+            "address": "vbhjh",
+            "country": "Bangladesh",
+            "division": null,
+            "district": null,
+            "thana": null,
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": "6845119531",
+            "package_id": 1,
+            "sponsor": null,
+            "agent": null,
+            "user_position_status": "ACTIVE",
+            "status": true,
+            "birth_date": null,
+            "current_wallet": 40.0,
+            "registration_wallet": 20.0,
+            "sponsor_wallet": 0.0,
+            "founder_wallet": 0.0,
+            "user_current_status": "WINNER",
+            "created_date": "2021-02-06T07:11:47.492Z",
+            "updated_date": "2021-02-07T19:31:09.283Z"
+        }
+    },
+    {
+        "model": "user_profile.profile",
+        "pk": 9,
+        "fields": {
+            "user": 11,
+            "full_name": "sam",
+            "address": "vbhjh",
+            "country": "Bangladesh",
+            "division": null,
+            "district": null,
+            "thana": null,
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": "1534450762",
+            "package_id": 1,
+            "sponsor": null,
+            "agent": null,
+            "user_position_status": "Active",
+            "status": true,
+            "birth_date": null,
+            "current_wallet": 20.0,
+            "registration_wallet": 20.0,
+            "sponsor_wallet": 0.0,
+            "founder_wallet": 0.0,
+            "user_current_status": "NEW_USER",
+            "created_date": "2021-02-07T16:08:00.366Z",
+            "updated_date": "2021-02-07T16:08:00.366Z"
+        }
+    },
+    {
+        "model": "user_profile.profile",
+        "pk": 10,
+        "fields": {
+            "user": 13,
+            "full_name": "Imran hossainaa",
+            "address": "dhaka",
+            "country": "Bangladesh",
+            "division": null,
+            "district": null,
+            "thana": null,
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": "2200962678",
+            "package_id": 1,
+            "sponsor": null,
+            "agent": 9,
+            "user_position_status": "Active",
+            "status": true,
+            "birth_date": null,
+            "current_wallet": 20.0,
+            "registration_wallet": 20.0,
+            "sponsor_wallet": 0.0,
+            "founder_wallet": 0.0,
+            "user_current_status": "NEW_USER",
+            "created_date": "2021-02-08T15:52:19.011Z",
+            "updated_date": "2021-02-08T15:52:19.011Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 1,
+        "fields": {
+            "agent": 2,
+            "amount": 200.0,
+            "created_date": "2021-02-06T06:39:03.198Z",
+            "updated_date": "2021-02-06T06:39:03.198Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 2,
+        "fields": {
+            "agent": 4,
+            "amount": 110.0,
+            "created_date": "2021-02-06T06:39:13.238Z",
+            "updated_date": "2021-02-08T08:35:42.723Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 3,
+        "fields": {
+            "agent": 9,
+            "amount": 380.0,
+            "created_date": "2021-02-06T14:34:22.903Z",
+            "updated_date": "2021-02-08T15:52:19.724Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 4,
+        "fields": {
+            "agent": 10,
+            "amount": 0.0,
+            "created_date": "2021-02-07T15:57:15.467Z",
+            "updated_date": "2021-02-07T15:57:15.467Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 5,
+        "fields": {
+            "agent": 12,
+            "amount": 10.0,
+            "created_date": "2021-02-08T08:18:22.785Z",
+            "updated_date": "2021-02-08T08:35:42.401Z"
+        }
+    },
+    {
+        "model": "account.agnetbalance",
+        "pk": 6,
+        "fields": {
+            "agent": 14,
+            "amount": 0.0,
+            "created_date": "2021-02-09T06:12:14.748Z",
+            "updated_date": "2021-02-09T06:12:14.748Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 1,
+        "fields": {
+            "sender": 9,
+            "receiver": 4,
+            "amount": 10.0,
+            "pin": "1661099116",
+            "status": "PENDING",
+            "created_date": "2021-02-08T06:42:53.492Z",
+            "updated_date": "2021-02-08T06:42:53.492Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 2,
+        "fields": {
+            "sender": 9,
+            "receiver": 4,
+            "amount": 10.0,
+            "pin": "1661099116",
+            "status": "PENDING",
+            "created_date": "2021-02-08T06:43:26.475Z",
+            "updated_date": "2021-02-08T06:43:26.476Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 3,
+        "fields": {
+            "sender": 9,
+            "receiver": 4,
+            "amount": 5.0,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-08T08:03:57.288Z",
+            "updated_date": "2021-02-08T08:03:57.288Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 4,
+        "fields": {
+            "sender": 9,
+            "receiver": 12,
+            "amount": 5.0,
+            "pin": "1",
+            "status": "DONE",
+            "created_date": "2021-02-08T08:19:16.211Z",
+            "updated_date": "2021-02-08T08:20:01.245Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 5,
+        "fields": {
+            "sender": 9,
+            "receiver": 12,
+            "amount": 5.0,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-08T08:22:45.288Z",
+            "updated_date": "2021-02-08T08:22:45.288Z"
+        }
+    },
+    {
+        "model": "account.agentbalanceexchange",
+        "pk": 6,
+        "fields": {
+            "sender": 12,
+            "receiver": 4,
+            "amount": 5.0,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-08T08:35:42.087Z",
+            "updated_date": "2021-02-08T08:35:42.088Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 1,
+        "fields": {
+            "user": 8,
+            "agent": 2,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T12:42:10.707Z",
+            "updated_date": "2021-02-06T12:42:10.707Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 2,
+        "fields": {
+            "user": 8,
+            "agent": 2,
+            "amount": 5.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T13:49:19.479Z",
+            "updated_date": "2021-02-06T13:49:19.479Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 3,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T14:43:43.548Z",
+            "updated_date": "2021-02-06T14:43:43.548Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 4,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T14:45:03.754Z",
+            "updated_date": "2021-02-06T14:45:03.754Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 5,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:00:44.896Z",
+            "updated_date": "2021-02-06T15:00:44.896Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 6,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:05:40.339Z",
+            "updated_date": "2021-02-06T15:05:40.339Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 7,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:14:27.571Z",
+            "updated_date": "2021-02-06T15:14:27.571Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 8,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:15:45.439Z",
+            "updated_date": "2021-02-06T15:15:45.439Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 9,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:22:39.168Z",
+            "updated_date": "2021-02-06T15:22:39.169Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 10,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-06T15:24:11.471Z",
+            "updated_date": "2021-02-06T15:24:11.472Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 11,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 5.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-07T19:24:56.512Z",
+            "updated_date": "2021-02-07T19:24:56.512Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 12,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 10.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-07T19:27:04.243Z",
+            "updated_date": "2021-02-07T19:27:04.243Z"
+        }
+    },
+    {
+        "model": "account.userbalancewithdraw",
+        "pk": 13,
+        "fields": {
+            "user": 8,
+            "agent": 9,
+            "amount": 5.0,
+            "withdraw_method": "Bitcoin",
+            "accountIdentifier": null,
+            "pin": "1",
+            "status": "PENDING",
+            "created_date": "2021-02-07T19:31:09.013Z",
+            "updated_date": "2021-02-07T19:31:09.013Z"
+        }
+    },
+    {
+        "model": "agent.agent",
+        "pk": 2,
+        "fields": {
+            "user": 4,
+            "full_name": "avijit das",
+            "address": "dhaka",
+            "country": "Bangladesh",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "767687",
+            "tnx_no": 5820736060,
+            "division": "dhaka",
+            "district": "dhaka",
+            "thana": "tala",
+            "BTCAddress": "fghgfhgjhgjhgj",
+            "transaction_id": 0,
+            "status": true,
+            "birth_date": null,
+            "created_date": "2021-02-04T07:56:46.225Z",
+            "updated_date": "2021-02-06T14:35:06.305Z"
+        }
+    },
+    {
+        "model": "agent.agent",
+        "pk": 3,
+        "fields": {
+            "user": 9,
+            "full_name": "alvi hossen",
+            "address": "dhaka",
+            "country": "Bangladesh",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "433545",
+            "tnx_no": 1661099116,
+            "division": "gaibandha",
+            "district": "dhaka",
+            "thana": "tala",
+            "BTCAddress": "vbhjheerttrhghgh",
+            "transaction_id": 0,
+            "status": true,
+            "birth_date": null,
+            "created_date": "2021-02-06T14:34:22.624Z",
+            "updated_date": "2021-02-06T14:34:41.336Z"
+        }
+    },
+    {
+        "model": "agent.agent",
+        "pk": 4,
+        "fields": {
+            "user": 10,
+            "full_name": "sumon",
+            "address": "dhaka",
+            "country": "Bangladesh",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": 1981805064,
+            "division": "khulna",
+            "district": "dhaka",
+            "thana": "tala",
+            "BTCAddress": "vbhjh",
+            "transaction_id": 0,
+            "status": true,
+            "birth_date": null,
+            "created_date": "2021-02-07T15:57:15.173Z",
+            "updated_date": "2021-02-07T15:57:15.173Z"
+        }
+    },
+    {
+        "model": "agent.agent",
+        "pk": 5,
+        "fields": {
+            "user": 12,
+            "full_name": "fahim molla",
+            "address": "dhaka",
+            "country": "Bangladesh",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "0246652345",
+            "tnx_no": 2738534309,
+            "division": "dhaka",
+            "district": "dhaka",
+            "thana": "tala",
+            "BTCAddress": "vbgfhfhgjgj",
+            "transaction_id": 0,
+            "status": true,
+            "birth_date": null,
+            "created_date": "2021-02-08T08:18:22.435Z",
+            "updated_date": "2021-02-08T08:18:22.435Z"
+        }
+    },
+    {
+        "model": "agent.agent",
+        "pk": 6,
+        "fields": {
+            "user": 14,
+            "full_name": "  sartaz hossain        ",
+            "address": "vbhjh",
+            "country": "Bangladesh",
+            "photo": "../static/profile.jpg",
+            "mobile_no": "1111111",
+            "tnx_no": 1993465102,
+            "division": "  gaibandha       ",
+            "district": "  dhaka        ",
+            "thana": "   tala       ",
+            "BTCAddress": "        vbhjhsdsgfh  ",
+            "transaction_id": 0,
+            "status": true,
+            "birth_date": null,
+            "created_date": "2021-02-09T06:12:14.422Z",
+            "updated_date": "2021-02-09T06:12:14.422Z"
+        }
+    },
+    {
+        "model": "organization.about",
+        "pk": 2,
+        "fields": {
+            "about_text": "<p>Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>\r\n\r\n<p>Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>"
+        }
+    },
+    {
+        "model": "organization.marketing",
+        "pk": 1,
+        "fields": {
+            "market_text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
+        }
+    },
+    {
+        "model": "organization.question",
+        "pk": 1,
+        "fields": {
+            "add_question": "Is iTrader-uk regulated?",
+            "question_details": "Nymstar Limited is authorized and regulated by the Seychelles Financial Services Authority (FSA) with license number SD025. FSA is an autonomous regulatory body responsible to license, regulate, enforce regulatory and compliance requirements, monitor and supervise the conduct of business in the non-bank financial services sector in Seychelles.Cyprus Securities and Exchange Commission (CySEC) with license number 178/12 Financial Conduct Authority (FCA) under the Financial Services Register number 730729."
+        }
+    },
+    {
+        "model": "organization.question",
+        "pk": 2,
+        "fields": {
+            "add_question": "When I trade the Stock instrument, do I own the Stocks I trade?",
+            "question_details": "No, the model used for the Stocks instrument is based on CFD products, or Contract for Difference. Exness offers Contract for Difference (CFDs) products which pay out the difference between the value of an instrument at the time of opening a position, and the value of the instrument at the time of closing a position - this is where profit and loss is derived from.\r\nSo while you open a position with a Stock, the value is derived from the price at the time of opening the position versus the difference of the value of it at the time of closing the position; CFDs on Stocks have no rights for ownership or dividends."
+        }
+    },
+    {
+        "model": "organization.question",
+        "pk": 3,
+        "fields": {
+            "add_question": "What do I do if I am unable to close a trade?",
+            "question_details": "If you are trying to close a trade during weekend hours, it will fail to close until the market reopens; please follow the link for Forex trading hours to find out when is best to close trades.\r\nThere is also a possibility that either a visual bug or connectivity issues have caused it to look as if a trade will not close but in actuality, the trade has closed.\r\n Another possibility is that One-Click Trading is not active, in which case a confirmation window would’ve appeared when attempting to close the trade. Choosing to turn it on when prompted still would not have closed the order, so you will need to again close the trade after turning this feature on.\r\nIf you are still experiencing issues closing the trade, please contact Support with your information on hand, and we may be able to assist you further."
+        }
+    },
+    {
+        "model": "organization.question",
+        "pk": 4,
+        "fields": {
+            "add_question": "Does iTrader-uk offer trading signals?",
+            "question_details": "No, we don’t offer custom trading signals of any kind. However the various trading terminals that we support do provide the ability to use trading signals."
+        }
+    },
+    {
+        "model": "organization.question",
+        "pk": 5,
+        "fields": {
+            "add_question": "What do I do if I am unable to close a trade?",
+            "question_details": "If you are trying to close a trade during weekend hours, it will fail to close until the market reopens; please follow the link for Forex trading hours to find out when is best to close trades.\r\nThere is also a possibility that either a visual bug or connectivity issues have caused it to look as if a trade will not close but in actuality, the trade has closed.\r\nPlease close your terminal completely, then reopen it and see if the trade is still active.\r\nAnother possibility is that One-Click Trading is not active, in which case a confirmation window would’ve appeared when attempting to close the trade. Choosing to turn it on when prompted still would not have closed the order, so you will need to again close the trade after turning this feature on.\r\nIf you are still experiencing issues closing the trade, please contact Support with your information on hand, and we may be able to assist you further."
+        }
+    },
+    {
+        "model": "organization.package",
+        "pk": 1,
+        "fields": {
+            "title": "primary",
+            "price": 20,
+            "discount": 15
+        }
+    },
+    {
+        "model": "organization.package",
+        "pk": 2,
+        "fields": {
+            "title": "Premium",
+            "price": 100,
+            "discount": 15
+        }
+    },
+    {
+        "model": "organization.contact",
+        "pk": 8,
+        "fields": {
+            "name": "Imrandfgfd",
+            "address": "vbhjh",
+            "email": "mdimranhossain122@gmail.com",
+            "phone": "1111111",
+            "message": "ghjghjf"
+        }
+    },
+    {
+        "model": "organization.companyaddress",
+        "pk": 1,
+        "fields": {
+            "address": "1093 Flushing Ave, UK",
+            "email": "itraderuk@gmail.com",
+            "phone": "+54 12 346 7826"
+        }
+    },
+    {
+        "model": "organization.navbarsupportedcontent",
+        "pk": 1,
+        "fields": {
+            "title": "Trade on the Most Popular Trading Platform",
+            "body": "Join a trusted and regulated online trading broke"
+        }
+    },
+    {
+        "model": "organization.userdashboardcontent",
+        "pk": 1,
+        "fields": {
+            "title": "Minds are like flowers, they only open when the time is right."
+        }
+    },
+    {
+        "model": "organization.userdashboardcontent",
+        "pk": 2,
+        "fields": {
+            "title": "An investment in knowledge pays the best interest."
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2021-02-02T17:20:35.495Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "1",
+            "object_repr": "About object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2021-02-02T17:25:23.280Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "1",
+            "object_repr": "About object (1)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About text\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2021-02-02T17:40:01.353Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Marketing object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2021-02-02T17:58:37.460Z",
+            "user": 1,
+            "content_type": 22,
+            "object_id": "1",
+            "object_repr": "Is iTrader-uk regulated?",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2021-02-02T17:59:19.980Z",
+            "user": 1,
+            "content_type": 22,
+            "object_id": "2",
+            "object_repr": "When I trade the Stock instrument, do I own the Stocks I trade?",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2021-02-02T18:00:25.221Z",
+            "user": 1,
+            "content_type": 22,
+            "object_id": "3",
+            "object_repr": "What do I do if I am unable to close a trade?",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2021-02-02T18:00:56.184Z",
+            "user": 1,
+            "content_type": 22,
+            "object_id": "4",
+            "object_repr": "Does iTrader-uk offer trading signals?",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2021-02-02T18:01:46.234Z",
+            "user": 1,
+            "content_type": 22,
+            "object_id": "5",
+            "object_repr": "What do I do if I am unable to close a trade?",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2021-02-02T18:53:17.385Z",
+            "user": 1,
+            "content_type": 23,
+            "object_id": "1",
+            "object_repr": "primary",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2021-02-02T18:53:35.282Z",
+            "user": 1,
+            "content_type": 23,
+            "object_id": "2",
+            "object_repr": "Premium",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2021-02-03T07:15:47.228Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "1",
+            "object_repr": "About object (1)",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2021-02-03T13:48:20.777Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "1",
+            "object_repr": "About object (1)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2021-02-03T13:48:59.958Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "2",
+            "object_repr": "About object (2)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2021-02-03T13:50:17.739Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "2",
+            "object_repr": "About object (2)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"About text\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2021-02-03T13:51:41.287Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Marketing object (1)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Market text\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2021-02-03T18:40:23.323Z",
+            "user": 1,
+            "content_type": 25,
+            "object_id": "1",
+            "object_repr": "+54 12 346 7826",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2021-02-05T09:16:37.621Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "sagor roy",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"User position status\", \"User current status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2021-02-05T09:32:43.640Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "arup hossain",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"User position status\", \"User current status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2021-02-05T09:34:25.564Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "arup hossain",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2021-02-05T09:35:17.225Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "sagor roy",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2021-02-05T09:47:08.196Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Imran hossain",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2021-02-06T06:39:03.219Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Jakir - (jakir122@gmail.com)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2021-02-06T06:39:13.254Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Avijit - (avijitdasnoyon@gmail.com)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2021-02-06T07:11:10.036Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "sardar",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2021-02-06T10:15:32.085Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "sardar",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"User position status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2021-02-06T10:17:15.768Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "1",
+            "object_repr": "jakir hossain",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Current wallet\", \"Agent balance\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2021-02-06T12:41:09.257Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "sardar",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"User current status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2021-02-06T12:42:35.853Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "sardar",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2021-02-06T13:57:21.448Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "sardar",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Current wallet\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2021-02-06T13:57:37.296Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "1",
+            "object_repr": "jakir hossain",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Current wallet\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2021-02-06T14:34:41.341Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "3",
+            "object_repr": "alvi hossen",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Current wallet\", \"Agent balance\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2021-02-06T14:34:49.995Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "1",
+            "object_repr": "jakir hossain",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2021-02-06T14:35:06.331Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "2",
+            "object_repr": "avijit das",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"BTCAddress\", \"Current wallet\", \"Agent balance\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2021-02-08T13:17:13.272Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "8",
+            "object_repr": "imransardar22",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2021-02-08T15:51:47.961Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Alvi - (alvi@gmail.com)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Amount\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2021-02-08T18:50:27.214Z",
+            "user": 1,
+            "content_type": 29,
+            "object_id": "1",
+            "object_repr": "Minds are like flowers, they only open when the time is right.",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2021-02-08T19:07:07.811Z",
+            "user": 1,
+            "content_type": 29,
+            "object_id": "1",
+            "object_repr": "Minds are like flowers, they only open when the time is right.",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Body\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2021-02-08T19:07:36.623Z",
+            "user": 1,
+            "content_type": 29,
+            "object_id": "2",
+            "object_repr": "An investment in knowledge pays the best interest.",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2021-02-08T19:11:29.322Z",
+            "user": 1,
+            "content_type": 29,
+            "object_id": "2",
+            "object_repr": "An investment in knowledge pays the best interest.",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2021-02-08T19:11:41.528Z",
+            "user": 1,
+            "content_type": 29,
+            "object_id": "1",
+            "object_repr": "Minds are like flowers, they only open when the time is right.",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2021-02-09T05:15:21.480Z",
+            "user": 1,
+            "content_type": 28,
+            "object_id": "1",
+            "object_repr": "Trade on the Most Popular Trading Platform",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add Notification",
+            "content_type": 1,
+            "codename": "add_notification"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change Notification",
+            "content_type": 1,
+            "codename": "change_notification"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete Notification",
+            "content_type": 1,
+            "codename": "delete_notification"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view Notification",
+            "content_type": 1,
+            "codename": "view_notification"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add package balance",
+            "content_type": 2,
+            "codename": "add_packagebalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change package balance",
+            "content_type": 2,
+            "codename": "change_packagebalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete package balance",
+            "content_type": 2,
+            "codename": "delete_packagebalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view package balance",
+            "content_type": 2,
+            "codename": "view_packagebalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add user extended",
+            "content_type": 3,
+            "codename": "add_userextended"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change user extended",
+            "content_type": 3,
+            "codename": "change_userextended"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete user extended",
+            "content_type": 3,
+            "codename": "delete_userextended"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view user extended",
+            "content_type": 3,
+            "codename": "view_userextended"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add package",
+            "content_type": 4,
+            "codename": "add_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change package",
+            "content_type": 4,
+            "codename": "change_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete package",
+            "content_type": 4,
+            "codename": "delete_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view package",
+            "content_type": 4,
+            "codename": "view_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add use position status",
+            "content_type": 5,
+            "codename": "add_usepositionstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change use position status",
+            "content_type": 5,
+            "codename": "change_usepositionstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete use position status",
+            "content_type": 5,
+            "codename": "delete_usepositionstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view use position status",
+            "content_type": 5,
+            "codename": "view_usepositionstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add sponsor",
+            "content_type": 6,
+            "codename": "add_sponsor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change sponsor",
+            "content_type": 6,
+            "codename": "change_sponsor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete sponsor",
+            "content_type": 6,
+            "codename": "delete_sponsor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view sponsor",
+            "content_type": 6,
+            "codename": "view_sponsor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add profile",
+            "content_type": 7,
+            "codename": "add_profile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change profile",
+            "content_type": 7,
+            "codename": "change_profile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete profile",
+            "content_type": 7,
+            "codename": "delete_profile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view profile",
+            "content_type": 7,
+            "codename": "view_profile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add user balance withdraw",
+            "content_type": 8,
+            "codename": "add_userbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change user balance withdraw",
+            "content_type": 8,
+            "codename": "change_userbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete user balance withdraw",
+            "content_type": 8,
+            "codename": "delete_userbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view user balance withdraw",
+            "content_type": 8,
+            "codename": "view_userbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add agnet balance",
+            "content_type": 9,
+            "codename": "add_agnetbalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change agnet balance",
+            "content_type": 9,
+            "codename": "change_agnetbalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete agnet balance",
+            "content_type": 9,
+            "codename": "delete_agnetbalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view agnet balance",
+            "content_type": 9,
+            "codename": "view_agnetbalance"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add agent balance withdraw",
+            "content_type": 10,
+            "codename": "add_agentbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change agent balance withdraw",
+            "content_type": 10,
+            "codename": "change_agentbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete agent balance withdraw",
+            "content_type": 10,
+            "codename": "delete_agentbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view agent balance withdraw",
+            "content_type": 10,
+            "codename": "view_agentbalancewithdraw"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add agent balance exchange",
+            "content_type": 11,
+            "codename": "add_agentbalanceexchange"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change agent balance exchange",
+            "content_type": 11,
+            "codename": "change_agentbalanceexchange"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete agent balance exchange",
+            "content_type": 11,
+            "codename": "delete_agentbalanceexchange"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view agent balance exchange",
+            "content_type": 11,
+            "codename": "view_agentbalanceexchange"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add agent balance add",
+            "content_type": 12,
+            "codename": "add_agentbalanceadd"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change agent balance add",
+            "content_type": 12,
+            "codename": "change_agentbalanceadd"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete agent balance add",
+            "content_type": 12,
+            "codename": "delete_agentbalanceadd"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view agent balance add",
+            "content_type": 12,
+            "codename": "view_agentbalanceadd"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add agent",
+            "content_type": 13,
+            "codename": "add_agent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change agent",
+            "content_type": 13,
+            "codename": "change_agent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete agent",
+            "content_type": 13,
+            "codename": "delete_agent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view agent",
+            "content_type": 13,
+            "codename": "view_agent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 53,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 14,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 54,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 14,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 55,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 14,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 56,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 14,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 57,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 15,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 58,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 15,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 59,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 15,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 60,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 15,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 61,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 16,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 62,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 16,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 63,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 16,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 64,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 16,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 65,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 17,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 66,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 17,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 67,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 17,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 68,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 17,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 69,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 18,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 70,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 18,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 71,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 18,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 72,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 18,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 73,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 19,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 74,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 19,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 75,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 19,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 76,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 19,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 77,
+        "fields": {
+            "name": "Can add about",
+            "content_type": 20,
+            "codename": "add_about"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 78,
+        "fields": {
+            "name": "Can change about",
+            "content_type": 20,
+            "codename": "change_about"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 79,
+        "fields": {
+            "name": "Can delete about",
+            "content_type": 20,
+            "codename": "delete_about"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 80,
+        "fields": {
+            "name": "Can view about",
+            "content_type": 20,
+            "codename": "view_about"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 81,
+        "fields": {
+            "name": "Can add marketing",
+            "content_type": 21,
+            "codename": "add_marketing"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 82,
+        "fields": {
+            "name": "Can change marketing",
+            "content_type": 21,
+            "codename": "change_marketing"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 83,
+        "fields": {
+            "name": "Can delete marketing",
+            "content_type": 21,
+            "codename": "delete_marketing"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 84,
+        "fields": {
+            "name": "Can view marketing",
+            "content_type": 21,
+            "codename": "view_marketing"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 85,
+        "fields": {
+            "name": "Can add question",
+            "content_type": 22,
+            "codename": "add_question"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 86,
+        "fields": {
+            "name": "Can change question",
+            "content_type": 22,
+            "codename": "change_question"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 87,
+        "fields": {
+            "name": "Can delete question",
+            "content_type": 22,
+            "codename": "delete_question"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 88,
+        "fields": {
+            "name": "Can view question",
+            "content_type": 22,
+            "codename": "view_question"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 89,
+        "fields": {
+            "name": "Can add package",
+            "content_type": 23,
+            "codename": "add_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 90,
+        "fields": {
+            "name": "Can change package",
+            "content_type": 23,
+            "codename": "change_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 91,
+        "fields": {
+            "name": "Can delete package",
+            "content_type": 23,
+            "codename": "delete_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 92,
+        "fields": {
+            "name": "Can view package",
+            "content_type": 23,
+            "codename": "view_package"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 93,
+        "fields": {
+            "name": "Can add contact",
+            "content_type": 24,
+            "codename": "add_contact"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 94,
+        "fields": {
+            "name": "Can change contact",
+            "content_type": 24,
+            "codename": "change_contact"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 95,
+        "fields": {
+            "name": "Can delete contact",
+            "content_type": 24,
+            "codename": "delete_contact"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 96,
+        "fields": {
+            "name": "Can view contact",
+            "content_type": 24,
+            "codename": "view_contact"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 97,
+        "fields": {
+            "name": "Can add company address",
+            "content_type": 25,
+            "codename": "add_companyaddress"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 98,
+        "fields": {
+            "name": "Can change company address",
+            "content_type": 25,
+            "codename": "change_companyaddress"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 99,
+        "fields": {
+            "name": "Can delete company address",
+            "content_type": 25,
+            "codename": "delete_companyaddress"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 100,
+        "fields": {
+            "name": "Can view company address",
+            "content_type": 25,
+            "codename": "view_companyaddress"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 101,
+        "fields": {
+            "name": "Can add terms condition",
+            "content_type": 26,
+            "codename": "add_termscondition"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 102,
+        "fields": {
+            "name": "Can change terms condition",
+            "content_type": 26,
+            "codename": "change_termscondition"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 103,
+        "fields": {
+            "name": "Can delete terms condition",
+            "content_type": 26,
+            "codename": "delete_termscondition"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 104,
+        "fields": {
+            "name": "Can view terms condition",
+            "content_type": 26,
+            "codename": "view_termscondition"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 105,
+        "fields": {
+            "name": "Can add admin account",
+            "content_type": 27,
+            "codename": "add_adminaccount"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 106,
+        "fields": {
+            "name": "Can change admin account",
+            "content_type": 27,
+            "codename": "change_adminaccount"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 107,
+        "fields": {
+            "name": "Can delete admin account",
+            "content_type": 27,
+            "codename": "delete_adminaccount"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 108,
+        "fields": {
+            "name": "Can view admin account",
+            "content_type": 27,
+            "codename": "view_adminaccount"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 109,
+        "fields": {
+            "name": "Can add navbar supported content",
+            "content_type": 28,
+            "codename": "add_navbarsupportedcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 110,
+        "fields": {
+            "name": "Can change navbar supported content",
+            "content_type": 28,
+            "codename": "change_navbarsupportedcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 111,
+        "fields": {
+            "name": "Can delete navbar supported content",
+            "content_type": 28,
+            "codename": "delete_navbarsupportedcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 112,
+        "fields": {
+            "name": "Can view navbar supported content",
+            "content_type": 28,
+            "codename": "view_navbarsupportedcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 113,
+        "fields": {
+            "name": "Can add user content",
+            "content_type": 29,
+            "codename": "add_usercontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 114,
+        "fields": {
+            "name": "Can change user content",
+            "content_type": 29,
+            "codename": "change_usercontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 115,
+        "fields": {
+            "name": "Can delete user content",
+            "content_type": 29,
+            "codename": "delete_usercontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 116,
+        "fields": {
+            "name": "Can view user content",
+            "content_type": 29,
+            "codename": "view_usercontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 117,
+        "fields": {
+            "name": "Can add user dashboard content",
+            "content_type": 29,
+            "codename": "add_userdashboardcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 118,
+        "fields": {
+            "name": "Can change user dashboard content",
+            "content_type": 29,
+            "codename": "change_userdashboardcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 119,
+        "fields": {
+            "name": "Can delete user dashboard content",
+            "content_type": 29,
+            "codename": "delete_userdashboardcontent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 120,
+        "fields": {
+            "name": "Can view user dashboard content",
+            "content_type": 29,
+            "codename": "view_userdashboardcontent"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$CT0JMRYDm3Xe$qgqsn4cG/vu3wwK2sI80MGnRtvpNXWqjDD9zazqn9yo=",
+            "last_login": "2021-02-08T18:45:50.247Z",
+            "is_superuser": true,
+            "username": "imran",
+            "first_name": "",
+            "last_name": "",
+            "email": "imran@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-02-01T18:23:02.698Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$WwdIsHabErNE$P0wQYpGoRBBaQUpe7InONTB+zNDQ4gxQqwWYOJnHlxA=",
+            "last_login": "2021-02-06T10:17:26.596Z",
+            "is_superuser": false,
+            "username": "jakir",
+            "first_name": "",
+            "last_name": "",
+            "email": "jakir122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-04T07:34:40.777Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$Wd5EAG4xbDov$1W10yFloFMG/cDJXR3XsmcuaiwJQGIqF+YXDk6p0CEs=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "arup",
+            "first_name": "",
+            "last_name": "",
+            "email": "mdimranhossain122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-04T07:42:46.330Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$Qj8EKjB0XtpO$fFAxY/2yocerdeOF26cyYQRWJ/q2Biktm1skVnT2I2g=",
+            "last_login": "2021-02-04T07:57:51.234Z",
+            "is_superuser": false,
+            "username": "avijit",
+            "first_name": "",
+            "last_name": "",
+            "email": "avijitdasnoyon@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-04T07:56:45.778Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$IqiTShNwZpTl$4qW0MtKrpBcGcCSxnYMp5js2df5Ys3Fcx2BeqNmBtmU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sagor",
+            "first_name": "",
+            "last_name": "",
+            "email": "sagor122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-04T07:58:51.908Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$iZyexU8CRSYt$UVbTknBDsthbjaVuOTuW19+wvmvEfMeiwICLwpaS1K8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "vampireboyghost22",
+            "first_name": "",
+            "last_name": "",
+            "email": "vampire@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-06T07:03:47.601Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$h2PyKVFElpis$ErimpHY//IqGIyzApClFdNYcgoBIkrzqV3O7agvM10k=",
+            "last_login": "2021-02-07T20:01:01.650Z",
+            "is_superuser": false,
+            "username": "imransardar2",
+            "first_name": "",
+            "last_name": "",
+            "email": "sardar@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-06T07:08:19.857Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$12FCw1T376Ii$jS0lIWULNDE2flIHYgc9rf/IWFaMEMfOuTrWecMhdJU=",
+            "last_login": "2021-02-09T06:22:22.569Z",
+            "is_superuser": false,
+            "username": "imransardar22",
+            "first_name": "",
+            "last_name": "",
+            "email": "imransardar122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-06T07:11:46Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$5pwxHBiuWsOg$tBvMJ+pVvgR1CWFmMIYNXPBfWAAYbUeLKm3pbHF+fc8=",
+            "last_login": "2021-02-08T15:52:00.277Z",
+            "is_superuser": false,
+            "username": "alvi",
+            "first_name": "",
+            "last_name": "",
+            "email": "alvi@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-06T14:34:22.096Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$o8jGFututD0E$PNamLOd1Z6PQLNjNJhDWgKFsjzmKsmBwWDpbbj1wh7g=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sumon1",
+            "first_name": "",
+            "last_name": "",
+            "email": "sumon122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-07T15:57:14.613Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 11,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$SDklHtHO5exg$hqiEiie/oKDIm/Dw8MKxv+jlx8AT6zgeZpKO4rowc74=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sam",
+            "first_name": "",
+            "last_name": "",
+            "email": "sam122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-07T16:07:59.571Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 12,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$BIrQFLYkaD2f$p763ufPEnddXFEbvpgAdjo5iGaegSA6kTEd+SZu7NcE=",
+            "last_login": "2021-02-08T08:23:04.530Z",
+            "is_superuser": false,
+            "username": "fahim2",
+            "first_name": "",
+            "last_name": "",
+            "email": "fahimmolla@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-08T08:18:21.887Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 13,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$i8qR8XH5BCNs$zVhe1H8fNY76VdpNX1A/0Ux2V+kXDzJzZO56XzfZh3E=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "vampireboyghost22s",
+            "first_name": "",
+            "last_name": "",
+            "email": "mdimaranhossain122@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-08T15:52:18.208Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 14,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$EPYM5oILo0I2$dNtnuhMjwRu4rGgClu3yqx5pa8WmYLF7hJkMvCrL92c=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": " jibonaa ",
+            "first_name": "",
+            "last_name": "",
+            "email": "mdimranhossain0066@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-09T06:12:13.843Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "user_admin",
+            "model": "notification"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "user_admin",
+            "model": "packagebalance"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "user_admin",
+            "model": "userextended"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "user_profile",
+            "model": "package"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "user_profile",
+            "model": "usepositionstatus"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "user_profile",
+            "model": "sponsor"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "user_profile",
+            "model": "profile"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "account",
+            "model": "userbalancewithdraw"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "account",
+            "model": "agnetbalance"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "account",
+            "model": "agentbalancewithdraw"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "account",
+            "model": "agentbalanceexchange"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "account",
+            "model": "agentbalanceadd"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "agent",
+            "model": "agent"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 16,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 17,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 18,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 19,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 20,
+        "fields": {
+            "app_label": "organization",
+            "model": "about"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 21,
+        "fields": {
+            "app_label": "organization",
+            "model": "marketing"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 22,
+        "fields": {
+            "app_label": "organization",
+            "model": "question"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 23,
+        "fields": {
+            "app_label": "organization",
+            "model": "package"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 24,
+        "fields": {
+            "app_label": "organization",
+            "model": "contact"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 25,
+        "fields": {
+            "app_label": "organization",
+            "model": "companyaddress"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 26,
+        "fields": {
+            "app_label": "organization",
+            "model": "termscondition"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 27,
+        "fields": {
+            "app_label": "account",
+            "model": "adminaccount"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 28,
+        "fields": {
+            "app_label": "organization",
+            "model": "navbarsupportedcontent"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 29,
+        "fields": {
+            "app_label": "organization",
+            "model": "userdashboardcontent"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "7t5id88uw0ieg5i702bipma92iufj0vm",
+        "fields": {
+            "session_data": ".eJxVjDsOwyAQRO9CHSEMmE_K9D4D2oV1cBKBZOwqyt2DJRdJM8WbN_NmAfYth73RGpbErsyxyy9DiE8qR5EeUO6Vx1q2dUF-KPxsG59qotftdP8OMrTc10KOJKVG5X2PSHEWM3lPGrCTAa2V5JU20mmTQIsB3IgolbXCG20d-3wB18Y2-w:1l9MPm:gzN-UYM9zdOOFwh6fEIEEp0dL837T_dQppWICCwcXA4",
+            "expire_date": "2021-02-23T06:22:22.858Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "crwvfpipet4a0ykjq1ftr4a77n26i14w",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCGUgSX7nsGMgyDVA0kpV0Z765NutDtf-_9lwi4rSVsnZcwJ3ERXpx-t4j04LqDdMd6a5JaXZc5yl2RB-1yaomf18P9OyjYy7cm9gqHrOJ5BMPGQdZRO5e9peQsaEjajORyymQZNCkNRiE5BuNR5UG8P-Z2N80:1l8qGZ:GGHHO3qxks5XYbi_5_Taat9y7ac88vTZtxJMXoru7k4",
+            "expire_date": "2021-02-21T20:02:43.737Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "fokje09vj9u52a8erd2rs9ivkgf2vg28",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hBgpgRcuvcMZIYBqZo2Ke3KeHdt0oVu_3vvv1SibW1p62VJo6izsur0uzHlR5l2IHeabrPO87QuI-td0Qft-jpLeV4O9--gUW_fGgdwWAEFiCIIectDwFIAkHy0tkZGz9kFYhPQobgKTtiT8SY4H9T7A9AHNzE:1l6dr6:8oiuIZjl6BbwfooUf3rIvOi_4KNJ4Df73gvLz6_StvQ",
+            "expire_date": "2021-02-15T18:23:20.307Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "h2dyq7mtysoqkts30kyfguuwisjstcwa",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCGUgSX7nsGMgyDVA0kpV0Z765NutDtf-_9lwi4rSVsnZcwJ3ERXpx-t4j04LqDdMd6a5JaXZc5yl2RB-1yaomf18P9OyjYy7cm9gqHrOJ5BMPGQdZRO5e9peQsaEjajORyymQZNCkNRiE5BuNR5UG8P-Z2N80:1l8PYi:UeRKGJ9DSLIhgeDBf2WzSkn7H8Auy4KAClQ2V-THBtA",
+            "expire_date": "2021-02-20T15:31:40.962Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "o22ck8s5qe5vw4a4dse0qdox8pvg9arw",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hBgpgRcuvcMZIYBqZo2Ke3KeHdt0oVu_3vvv1SibW1p62VJo6izsur0uzHlR5l2IHeabrPO87QuI-td0Qft-jpLeV4O9--gUW_fGgdwWAEFiCIIectDwFIAkHy0tkZGz9kFYhPQobgKTtiT8SY4H9T7A9AHNzE:1l6ww5:hTa-7TlyYzb1noOQ6pSt99Wh4CINVNFoBiDpyziqFpA",
+            "expire_date": "2021-02-16T14:45:45.071Z"
+        }
+    }
+]

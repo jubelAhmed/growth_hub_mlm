@@ -1,0 +1,72 @@
+{% load static %}
+
+{% include 'admin/admin_navbar.html' %}
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" navigation-header"><span>General</span><i class=" feather icon-minus" data-toggle="tooltip"
+                    data-placement="right" data-original-title="General"></i>
+            </li>
+            <li class=" nav-item"><a href="{% url 'admin_dashboard' %}"><i class="feather icon-home"></i><span
+                        class="menu-title" data-i18n="Dashboard">Dashboard</span>
+                    <!-- <span class="badge badge badge-primary badge-pill float-right mr-2">3</span> -->
+                </a>
+
+            </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-monitor"></i><span class="menu-title"
+                        data-i18n="Templates">Member</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{% url 'new_member' %}" data-i18n="Vertical">New Member</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'holdline_list' %}" data-i18n="Vertical">Hold Line Member</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'pakage_line_member' %}" data-i18n="Vertical">Top 100 List
+                            Member</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'winner_List' %}" data-i18n="Vertical">Winner List</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-layout"></i><span class="menu-title"
+                        data-i18n="Layouts">Agent</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{% url 'agent_list' %}" data-i18n="Page Layouts">Agent List</a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="feather icon-bell"></i><span class="menu-title"
+                        data-i18n="Layouts">Notification</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{% url 'notification_list7' %}" data-i18n="Page Layouts">Notification
+                            List</a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="fa fa-euro"></i><span class="menu-title"
+                        data-i18n="Layouts">Account</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{% url 'give_agent_money' %}" data-i18n="Page Layouts">Agent Money
+                            Reload</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'agent_money_withdraw' %}" data-i18n="Page Layouts">Agent
+                            Money withdraw</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'user_money_withdraw' %}" data-i18n="Page Layouts">User
+                        Money withdraw</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'agent_account_balance' %}" data-i18n="Page Layouts">Agents Balance</a>
+                    </li>
+                    <li><a class="menu-item" href="{% url 'admin_account_balance' %}" data-i18n="Page Layouts">Admin Balance</a>
+                </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="{% url 'admin_contact' %}"><i class="feather icon-layout"></i><span
+                        class="menu-title" data-i18n="Layouts">Contact List</span></a>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
