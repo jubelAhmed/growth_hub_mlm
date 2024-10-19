@@ -40,7 +40,6 @@ venv\Scripts\activate
 ```
 On macOS/Linux:
 ```bash
-Copy code
 source venv/bin/activate
 ```
 - Install the necessary dependencies:
