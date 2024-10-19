@@ -55,10 +55,15 @@ Run the migrations to set up the database:
 python manage.py migrate
 ```
 
+- Load the basic compnay data
+```bash
+ python manage.py loaddata landingpage_setup.json 
+ ```    
 - Start the application:
 
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
+
 ```
 
 Note: This repository is a continuation of the Growth Hub MLM project.

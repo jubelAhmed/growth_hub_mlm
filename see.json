@@ -705,7 +705,7 @@
         "model": "organization.question",
         "pk": 1,
         "fields": {
-            "add_question": "Is iTrader-uk regulated?",
+            "add_question": "Is Referral Boost regulated?",
             "question_details": "Nymstar Limited is authorized and regulated by the Seychelles Financial Services Authority (FSA) with license number SD025. FSA is an autonomous regulatory body responsible to license, regulate, enforce regulatory and compliance requirements, monitor and supervise the conduct of business in the non-bank financial services sector in Seychelles.Cyprus Securities and Exchange Commission (CySEC) with license number 178/12 Financial Conduct Authority (FCA) under the Financial Services Register number 730729."
         }
     },
@@ -729,7 +729,7 @@
         "model": "organization.question",
         "pk": 4,
         "fields": {
-            "add_question": "Does iTrader-uk offer trading signals?",
+            "add_question": "Does Referral Boost offer trading signals?",
             "question_details": "No, we don’t offer custom trading signals of any kind. However the various trading terminals that we support do provide the ability to use trading signals."
         }
     },
@@ -775,7 +775,7 @@
         "pk": 1,
         "fields": {
             "address": "1093 Flushing Ave, UK",
-            "email": "itraderuk@gmail.com",
+            "email": "referralboost@gmail.com",
             "phone": "+54 12 346 7826"
         }
     },
@@ -848,7 +848,7 @@
             "user": 1,
             "content_type": 22,
             "object_id": "1",
-            "object_repr": "Is iTrader-uk regulated?",
+            "object_repr": "Is Referral Boost regulated?",
             "action_flag": 1,
             "change_message": "[{\"added\": {}}]"
         }
@@ -887,7 +887,7 @@
             "user": 1,
             "content_type": 22,
             "object_id": "4",
-            "object_repr": "Does iTrader-uk offer trading signals?",
+            "object_repr": "Does Referral Boost offer trading signals?",
             "action_flag": 1,
             "change_message": "[{\"added\": {}}]"
         }

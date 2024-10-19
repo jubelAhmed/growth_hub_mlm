@@ -146,7 +146,7 @@ MEDIA_URL = '/media/'
 #email
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'itraderuk.com@gmail.com'
+EMAIL_HOST_USER = 'referralboost.com@gmail.com'
 EMAIL_HOST_PASSWORD = '@Pass123'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
