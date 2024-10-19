@@ -60,3 +60,5 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+Note: This repository is a continuation of the Growth Hub MLM project.
